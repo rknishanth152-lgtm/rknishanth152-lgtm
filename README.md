@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/nishanth-hero.svg" alt="Raghu Kavitha Nishanth — animated developer banner" width="100%"/>
+<img src="./nishanth-hero.svg" alt="Raghu Kavitha Nishanth — animated developer banner" width="100%"/>
 
 <br/>
 
