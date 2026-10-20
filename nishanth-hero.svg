@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Raghu Kavitha Nishanth — animated GitHub profile banner</title>
+  <desc id="desc">A dark midnight-blue developer banner with animated cyan light, moving grid lines, particles, and a progressive name reveal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="55%" stop-color="#0B1830"/>
+      <stop offset="100%" stop-color="#07121D"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity=".05"/>
+      <stop offset="50%" stop-color="#67E8F9" stop-opacity=".95"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity=".12"/>
+    </linearGradient>
+    <linearGradient id="nameFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E6FBFF"/>
+      <stop offset="45%" stop-color="#8BE9FF"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#38BDF8" stroke-opacity=".075" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="nameClip">
+      <rect x="0" y="0" width="0" height="100">
+        <animate attributeName="width" values="0;1040;1040;0" keyTimes="0;.36;.82;1" dur="12s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="360" rx="22" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="22" fill="url(#grid)"/>
+  <ellipse cx="600" cy="175" rx="510" ry="210" fill="url(#glow)"/>
+  <g opacity=".55" fill="none" stroke="#22D3EE" stroke-width="1">
+    <path d="M0 68H135L155 88H220" stroke-opacity=".35"/>
+    <path d="M1200 75H1070L1050 95H980" stroke-opacity=".35"/>
+    <path d="M0 285H90L115 260H190" stroke-opacity=".25"/>
+    <path d="M1200 285H1105L1080 260H1015" stroke-opacity=".25"/>
+  </g>
+
+  <!-- Subtle moving scan lines -->
+  <g opacity=".22">
+    <path d="M0 0H1200" stroke="#67E8F9" stroke-width="1">
+      <animate attributeName="d" values="M0 18H1200;M0 342H1200;M0 18H1200" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Floating signal points -->
+  <g fill="#67E8F9">
+    <circle cx="160" cy="130" r="2.4"><animate attributeName="cy" values="130;116;130" dur="4.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".25;1;.25" dur="4.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1010" cy="135" r="2"><animate attributeName="cy" values="135;151;135" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".2;.9;.2" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="230" cy="250" r="1.8"><animate attributeName="cx" values="230;255;230" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="970" cy="240" r="2.2"><animate attributeName="cx" values="970;945;970" dur="5.5s" repeatCount="indefinite"/></circle>
+    <circle cx="350" cy="92" r="1.6"><animate attributeName="opacity" values=".2;.9;.2" dur="3.7s" repeatCount="indefinite"/></circle>
+    <circle cx="850" cy="282" r="1.7"><animate attributeName="opacity" values=".15;.8;.15" dur="4.1s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Header label -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="3" fill="#67E8F9">
+    <text x="70" y="54" opacity=".92">RK / DEVELOPER PROFILE</text>
+    <text x="1130" y="54" text-anchor="end" opacity=".65">BUILD • LEARN • ITERATE</text>
+  </g>
+  <path d="M70 72H1130" stroke="url(#edge)" stroke-width="1.5"/>
+
+  <!-- Name, with a reveal and sweeping highlight -->
+  <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" letter-spacing="2">
+    <text x="600" y="153" font-size="43" fill="#E6FBFF" opacity=".08">RAGHU KAVITHA</text>
+    <text x="600" y="153" font-size="43" fill="url(#nameFill)" clip-path="url(#nameClip)">RAGHU KAVITHA</text>
+    <text x="600" y="211" font-size="54" fill="#E6FBFF" opacity=".08">NISHANTH</text>
+    <text x="600" y="211" font-size="54" fill="url(#nameFill)" clip-path="url(#nameClip)">NISHANTH</text>
+  </g>
+
+  <!-- Light sweep -->
+  <g opacity=".85" filter="url(#softGlow)">
+    <rect x="-160" y="93" width="90" height="140" fill="#A5F3FC" opacity=".18" transform="skewX(-18)">
+      <animate attributeName="x" values="-260;1370;-260" dur="7s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Terminal-style identity -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="15" text-anchor="middle">
+    <text x="600" y="257" fill="#94A3B8">$</text>
+    <text x="620" y="257" fill="#C8D9E8">Computer Technology Student <tspan fill="#22D3EE">/</tspan> AI <tspan fill="#22D3EE">/</tspan> Software</text>
+    <text x="600" y="287" fill="#67E8F9" font-size="13">BUILDING PRACTICAL THINGS, ONE ITERATION AT A TIME</text>
+  </g>
+
+  <!-- Cursor blink -->
+  <rect x="1057" y="275" width="7" height="16" rx="1" fill="#67E8F9">
+    <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Footer rule and corner marks -->
+  <path d="M70 316H1130" stroke="url(#edge)" stroke-opacity=".7"/>
+  <g stroke="#22D3EE" stroke-width="2" fill="none" opacity=".8">
+    <path d="M70 86V98M70 86H82"/>
+    <path d="M1130 86V98M1130 86H1118"/>
+    <path d="M70 302V290M70 302H82"/>
+    <path d="M1130 302V290M1130 302H1118"/>
+  </g>
+  <text x="70" y="340" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#64748B" letter-spacing="2">EST. ON CURIOSITY</text>
+  <text x="1130" y="340" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#64748B" letter-spacing="2">NO FAKE METRICS // JUST PROGRESS</text>
+</svg>
