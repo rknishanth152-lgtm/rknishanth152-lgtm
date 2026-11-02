@@ -37,14 +37,6 @@
 
 <br/><br/>
 
-<img src="assets/label-activity.svg" width="100%" alt="Activity"/>
-
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=rknishanth152-lgtm&bg_color=F4F1EA&color=5F6168&title_color=14161A&line=2F55E4&point=14161A&area=true&area_color=2F55E4&hide_border=true&radius=24&custom_title=Contributions%20over%20the%20last%2031%20days" width="100%" alt="Contribution activity graph"/>
-
-<br/><br/>
-
 <img src="assets/footer.svg" width="100%" alt="Thanks for riding the line."/>
 
 </div>
