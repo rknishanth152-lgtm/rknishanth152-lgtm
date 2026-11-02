@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="t d">
+  <title id="t">RK Nishanth</title>
+  <desc id="d">RK Nishanth builds software for the people around him: farmers, families, shopkeepers, and anyone a scam call might reach. B.Sc. Computer Technology student, First Prize at the SPARK'26 Hackathon.</desc>
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#D9D3C5"/>
+    </pattern>
+    <clipPath id="nameClip"><rect x="40" y="88" width="800" height="140"/></clipPath>
+    <path id="ring" d="M1010 250 m-142 0 a142 142 0 1 1 284 0 a142 142 0 1 1 -284 0"/>
+    <path id="miniRoute" d="M66 252 H430 L456 278 H760"/>
+  </defs>
+  <style>
+    .d{font-family:'Segoe UI Variable Display','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
+    .m{font-family:ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,Menlo,monospace}
+    .ta{font-family:'Nirmala UI','Tamil Sangam MN','Noto Sans Tamil',Latha,sans-serif}
+    .ink{fill:#14161A}.mut{fill:#5F6168}.acc{fill:#2F55E4}
+    @keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+    @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    @keyframes draw{from{stroke-dashoffset:720}to{stroke-dashoffset:0}}
+    @keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:none}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes cyc{0%{opacity:0;transform:translateY(10px)}4%,30%{opacity:1;transform:none}34%,100%{opacity:0;transform:translateY(-10px)}}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    .name{animation:rise .9s cubic-bezier(.2,.8,.2,1) .15s both}
+    .route{stroke-dasharray:720;animation:draw 1.3s cubic-bezier(.6,0,.2,1) .6s both}
+    .st{transform-box:fill-box;transform-origin:center;animation:pop .4s cubic-bezier(.3,1.6,.5,1) both}
+    .u1{animation:up .7s ease-out .95s both}.u2{animation:up .7s ease-out 1.08s both}
+    .u3{animation:up .7s ease-out 1.3s both}.u4{animation:up .7s ease-out 1.5s both}.u0{animation:up .7s ease-out .05s both}
+    .roundel{transform-box:fill-box;transform-origin:center;animation:pop .8s cubic-bezier(.3,1.4,.5,1) .25s both}
+    .orbit{transform-origin:1010px 250px;animation:spin 48s linear infinite}
+    .p{opacity:0;animation:cyc 12s ease-in-out infinite}
+    .p1{opacity:1;animation-delay:1.6s}.p2{animation-delay:-6.4s}.p3{animation-delay:-2.4s}
+    .live{animation:blink 1.6s ease-in-out infinite}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}.p2,.p3{opacity:0}}
+  </style>
+
+  <rect width="1200" height="500" rx="28" fill="#F4F1EA"/>
+  <rect width="1200" height="500" rx="28" fill="url(#dots)" opacity=".75"/>
+
+  <!-- top row -->
+  <g class="u0">
+    <text x="64" y="62" class="ta mut" font-size="15">வணக்கம்</text>
+    <text x="136" y="62" class="m mut" font-size="13" letter-spacing="1.5">— HELLO, I'M</text>
+  </g>
+
+  <!-- name -->
+  <g clip-path="url(#nameClip)">
+    <text x="58" y="206" class="d ink name" font-size="118" font-weight="700" letter-spacing="-4">RK Nishanth</text>
+  </g>
+
+  <!-- mini route under the name -->
+  <use xlink:href="#miniRoute" class="route" fill="none" stroke="#14161A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="66" cy="252" r="8" fill="#F4F1EA" stroke="#14161A" stroke-width="4" class="st" style="animation-delay:.6s"/>
+  <circle cx="300" cy="252" r="8" fill="#F4F1EA" stroke="#14161A" stroke-width="4" class="st" style="animation-delay:.95s"/>
+  <circle cx="590" cy="278" r="8" fill="#F4F1EA" stroke="#14161A" stroke-width="4" class="st" style="animation-delay:1.35s"/>
+  <circle cx="760" cy="278" r="11" fill="#F4F1EA" stroke="#2F55E4" stroke-width="5" class="st" style="animation-delay:1.7s"/>
+  <rect x="-13" y="-6" width="26" height="12" rx="6" fill="#2F55E4">
+    <animateMotion dur="6s" begin="1.9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.8;1" calcMode="linear">
+      <mpath xlink:href="#miniRoute"/>
+    </animateMotion>
+    <set attributeName="opacity" to="0" begin="0s" dur="1.9s"/>
+  </rect>
+
+  <!-- tagline -->
+  <text x="64" y="336" class="d ink u1" font-size="25">I build software for the people around me —</text>
+  <text x="64" y="370" class="d mut u2" font-size="25">farmers, families, shopkeepers, and anyone a scam call might reach.</text>
+
+  <!-- rotating "now" line -->
+  <g class="u3">
+    <circle cx="70" cy="424" r="5" class="acc live"/>
+    <text x="84" y="429" class="m ink" font-size="14" letter-spacing=".5">NOW</text>
+    <g class="m ink" font-size="14">
+      <text x="128" y="429" class="p p1">training an XGBoost model to catch phishing URLs</text>
+      <text x="128" y="429" class="p p2">shipping an offline-first Android app in Tamil and English</text>
+      <text x="128" y="429" class="p p3">teaching a Random Forest to read tomorrow's rain</text>
+    </g>
+  </g>
+
+  <text x="64" y="470" class="m mut u4" font-size="12.5" letter-spacing="1.2">B.SC. COMPUTER TECHNOLOGY  ·  FIRST PRIZE, SPARK'26 HACKATHON  ·  TAMIL + ENGLISH</text>
+
+  <!-- roundel -->
+  <g class="roundel">
+    <circle cx="1010" cy="250" r="168" fill="#EAE5DA"/>
+    <circle cx="1010" cy="250" r="104" fill="none" stroke="#2F55E4" stroke-width="28"/>
+    <rect x="884" y="226" width="252" height="48" rx="4" fill="#14161A"/>
+    <text x="1010" y="256" text-anchor="middle" class="m" fill="#F4F1EA" font-size="17" font-weight="700" letter-spacing="3.5">RK NISHANTH</text>
+  </g>
+  <g class="orbit">
+    <text class="m mut" font-size="12.5" letter-spacing="1">
+      <textPath xlink:href="#ring" textLength="880" lengthAdjust="spacing">BUILD · TEST · DEBUG · ITERATE · BUILD · TEST · DEBUG · ITERATE · BUILD · TEST · DEBUG · ITERATE ·</textPath>
+    </text>
+  </g>
+</svg>
