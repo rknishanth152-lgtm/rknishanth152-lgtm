@@ -296,24 +296,27 @@ ff_vignette = f"""{phone(790, "வரவு · செலவு", "ta", ["rA1", "
     <text x="854" y="326" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">PHONE A · TAMIL</text>
     <text x="1074" y="326" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">PHONE B · ENGLISH</text>"""
 
-stats = "".join(
-    f'<text x="{44 + i * 150}" y="{326}" class="d ink" font-size="38" font-weight="700" letter-spacing="-1">{n}</text>'
-    f'<text x="{46 + i * 150}" y="{350}" class="m mut" font-size="11" letter-spacing="1.2">{lab}</text>'
-    for i, (n, lab) in enumerate([("195", "UNIT TESTS"), ("29", "RULES TESTS"), ("22", "DEVICE TESTS")])
-)
-ff_body = f"""  <g class="e e1">
-    <circle cx="51" cy="49" r="10" fill="{PAPER}" stroke="{ACCENT}" stroke-width="5"/>
-    <text x="72" y="53.5" class="m mut" font-size="12" letter-spacing="1.3">STATION 07 · HOME · TERMINUS</text>
+def wide(name, title, tag, marker, quote_lines, desc_lines, stack, numbers, vignette, style, desc_alt):
+    stats = "".join(
+        f'<text x="{44 + i * 150}" y="326" class="d ink" font-size="38" font-weight="700" letter-spacing="-1">{n}</text>'
+        f'<text x="{46 + i * 150}" y="350" class="m mut" font-size="11" letter-spacing="1.2">{lab}</text>'
+        for i, (n, lab) in enumerate(numbers)
+    )
+    quote = "".join(
+        f'<text x="42" y="{160 + i * 28}" class="d ink" font-size="21">{line}</text>' for i, line in enumerate(quote_lines)
+    )
+    desc = "".join(
+        f'<text x="42" y="{220 + i * 22}" class="d mut" font-size="15.5">{line}</text>' for i, line in enumerate(desc_lines)
+    )
+    body = f"""  <g class="e e1">
+    <circle cx="51" cy="49" r="10" fill="{PAPER}" stroke="{marker[0]}" stroke-width="{marker[1]}"/>
+    <text x="72" y="53.5" class="m mut" font-size="12" letter-spacing="1.3">{tag}</text>
   </g>
-  <text x="40" y="118" class="d ink e e2" font-size="48" font-weight="700" letter-spacing="-1.4">Family Finance</text>
-  <g class="e e3">
-    <text x="42" y="160" class="d ink" font-size="21">Two people, two phones, one shared set of books,</text>
-    <text x="42" y="188" class="d ink" font-size="21">kept to the paisa.</text>
-  </g>
+  <text x="40" y="118" class="d ink e e2" font-size="48" font-weight="700" letter-spacing="-1.4">{title}</text>
+  <g class="e e3">{quote}</g>
   <g class="e e4">
-    <text x="42" y="220" class="d mut" font-size="15.5">Offline-first Android money manager in Tamil and English. Either phone</text>
-    <text x="42" y="242" class="d mut" font-size="15.5">can add or edit, and both stay in sync after a day offline in the fields.</text>
-    <text x="42" y="270" class="m mut" font-size="12" letter-spacing=".4">KOTLIN · JETPACK COMPOSE · MATERIAL 3 · FIREBASE AUTH + FIRESTORE</text>
+    {desc}
+    <text x="42" y="270" class="m mut" font-size="12" letter-spacing=".4">{stack}</text>
   </g>
   <g class="e e5">{stats}</g>
   <g class="e e5">
@@ -321,14 +324,94 @@ ff_body = f"""  <g class="e e1">
     <g class="arrow"><text x="680" y="350" class="d acc" font-size="16" font-weight="700">→</text></g>
   </g>
   <g class="v">
-{ff_vignette}
+{vignette}
   </g>"""
+    (OUT / f"{name}.svg").write_text(svg(1200, 380, title, desc_alt, style, body), encoding="utf-8")
 
-OUT.mkdir(parents=True, exist_ok=True)
-(OUT / "family-finance.svg").write_text(
-    svg(1200, 380, "Family Finance",
-        "Private, offline-first family money manager for Android in Tamil and English, with 195 unit tests, 29 rules tests and 22 device tests.",
-        ff_style, ff_body),
-    encoding="utf-8",
+
+wide(
+    "family-finance", "Family Finance", "STATION 07 · HOME", (INK, 4.5),
+    ["Two people, two phones, one shared set of books,", "kept to the paisa."],
+    ["Offline-first Android money manager in Tamil and English. Either phone",
+     "can add or edit, and both stay in sync after a day offline in the fields."],
+    "KOTLIN · JETPACK COMPOSE · MATERIAL 3 · FIREBASE AUTH + FIRESTORE",
+    [("195", "UNIT TESTS"), ("29", "RULES TESTS"), ("22", "DEVICE TESTS")],
+    ff_vignette, ff_style,
+    "Private, offline-first family money manager for Android in Tamil and English, with 195 unit tests, 29 rules tests and 22 device tests.",
+)
+
+# ---------------------------------------------------------------- 08 git history (wide)
+dig_style = """
+    @keyframes slip{0%,8%{transform:none}14%,90%{transform:translateY(16px)}98%,100%{transform:none}}
+    @keyframes was{0%,10%{opacity:1}13%,90%{opacity:0}97%,100%{opacity:1}}
+    @keyframes now{0%,10%{opacity:0}13%,90%{opacity:1}97%,100%{opacity:0}}
+    @keyframes bore1{0%,16%{transform:scaleY(0);opacity:1}30%,90%{transform:none;opacity:1}96%,100%{transform:none;opacity:0}}
+    @keyframes bore2{0%,30%{transform:scaleY(0);opacity:1}44%,90%{transform:none;opacity:1}96%,100%{transform:none;opacity:0}}
+    @keyframes bore3{0%,44%{transform:scaleY(0);opacity:1}58%,90%{transform:none;opacity:1}96%,100%{transform:none;opacity:0}}
+    @keyframes tag1{0%,29%{opacity:0;transform:translateY(6px)}33%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+    @keyframes tag2{0%,43%{opacity:0;transform:translateY(6px)}47%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+    @keyframes tag3{0%,57%{opacity:0;transform:translateY(6px)}61%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+    .slip{animation:slip 10s cubic-bezier(.6,0,.2,1) infinite}
+    .was{animation:was 10s linear infinite}.now{animation:now 10s linear infinite}
+    .bore{transform-box:fill-box;transform-origin:top}
+    .b1{animation:bore1 10s cubic-bezier(.5,0,.3,1) infinite}.b2{animation:bore2 10s cubic-bezier(.5,0,.3,1) infinite}.b3{animation:bore3 10s cubic-bezier(.5,0,.3,1) infinite}
+    .t1{animation:tag1 10s ease-out infinite}.t2{animation:tag2 10s ease-out infinite}.t3{animation:tag3 10s ease-out infinite}
+"""
+
+
+def rock(bar_x, widths):
+    bands = "".join(
+        f'<rect x="770" y="{y}" width="380" height="{h}" fill="{fill}"/>'
+        for y, h, fill in [(30, 90, "#EAE5DA"), (120, 70, "#DFD8C9"), (190, 100, "#D2CBBB")]
+    )
+    bars = "".join(
+        f'<rect x="{bar_x}" y="{y}" width="{w}" height="7" rx="3.5" fill="#BDB5A1"/>'
+        for y, w in zip([94, 212, 234], widths)
+    )
+    return bands + bars
+
+
+weak_shaft = "".join(f'<rect x="1036" y="{y}" width="8" height="14" fill="{INK}"/>' for y in [190, 212, 234, 256])
+dig_vignette = f"""    <defs>
+      <clipPath id="panel"><rect x="770" y="50" width="380" height="268" rx="16"/></clipPath>
+      <clipPath id="beforeSide"><path d="M770 50 H950 L905 262 H770 Z"/></clipPath>
+      <clipPath id="afterSide"><path d="M950 50 H1150 V262 H905 Z"/></clipPath>
+      <pattern id="undug" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="{SURFACE}"/><rect width="3" height="10" fill="{RULE}"/></pattern>
+    </defs>
+    <g clip-path="url(#panel)">
+      <g clip-path="url(#beforeSide)">
+        {rock(784, [92, 72, 108])}
+        <text x="782" y="160" class="m ink" font-size="11" font-weight="600">return price * 0.10</text>
+      </g>
+      <g clip-path="url(#afterSide)"><g class="slip">
+        {rock(965, [128, 84, 116])}
+        <text x="945" y="160" class="m ink was alt" font-size="11" font-weight="600">return price * 0.10</text>
+        <text x="945" y="160" class="m ink now" font-size="11" font-weight="600">return price * 0.15</text>
+      </g></g>
+      <rect x="770" y="262" width="380" height="56" fill="url(#undug)"/>
+    </g>
+    <path d="M950 50 L905 262" fill="none" stroke="{INK}" stroke-width="4" stroke-linecap="round"/>
+    <text x="784" y="76" class="m ink" font-size="10" font-weight="700" letter-spacing="1.2">BASE</text>
+    <text x="1136" y="76" text-anchor="end" class="m ink" font-size="10" font-weight="700" letter-spacing="1.2">HEAD</text>
+    <g class="bore b1"><rect x="956" y="190" width="8" height="88" fill="{ACCENT}"/></g>
+    <g class="bore b2">{weak_shaft}</g>
+    <g class="bore b3"><rect x="1111" y="190" width="8" height="88" fill="{PAPER}" stroke="{INK}" stroke-width="2"/></g>
+    <rect x="784" y="278" width="116" height="22" rx="11" fill="{PAPER}"/>
+    <text x="842" y="293" text-anchor="middle" class="m mut" font-size="9.5" font-weight="700" letter-spacing=".6">UNDUG GROUND</text>
+    <g class="t1"><rect x="930" y="278" width="60" height="22" rx="11" fill="{ACCENT}"/><text x="960" y="293" text-anchor="middle" class="m" fill="#FFFFFF" font-size="9.5" font-weight="700" letter-spacing=".6">STRONG</text></g>
+    <g class="t2"><rect x="1010" y="278" width="60" height="22" rx="11" fill="{PAPER}" stroke="{INK}" stroke-width="2"/><text x="1040" y="293" text-anchor="middle" class="m ink" font-size="9.5" font-weight="700" letter-spacing=".6">WEAK</text></g>
+    <g class="t3"><rect x="1085" y="278" width="60" height="22" rx="11" fill="{PAPER}" stroke="{MUTED}" stroke-width="2" stroke-dasharray="4 4"/><text x="1115" y="293" text-anchor="middle" class="m mut" font-size="9.5" font-weight="700" letter-spacing=".6">NONE</text></g>
+    <rect x="770" y="50" width="380" height="268" rx="16" fill="none" stroke="{INK}" stroke-width="3"/>
+    <text x="960" y="346" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">FAULT = CHANGE · SHAFT = POSSIBLE TEST LINK</text>"""
+
+wide(
+    "change-archaeologist", "Change Archaeologist", "STATION 08 · GIT HISTORY · TERMINUS", (ACCENT, 5),
+    ["See how a function changed between two Git versions,", "and whether its tests moved with it."],
+    ["Reads both versions as syntax trees, then separates what it saw from what",
+     "that suggests and what it can't know. No AI, and it never runs your code."],
+    "TYPESCRIPT · TS-MORPH · REACT + VITE · MONACO · NODE CLI",
+    [("6", "CHANGE PATTERNS"), ("4", "LINK STATUSES"), ("0", "AI CALLS")],
+    dig_vignette, dig_style,
+    "Local-first static analysis that compares a function across two Git revisions and looks for matching changes in its tests, separating evidence from inference.",
 )
 print("cards written to", OUT)

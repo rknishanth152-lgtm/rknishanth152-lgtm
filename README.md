@@ -6,7 +6,7 @@
 
 <br/><br/>
 
-<img src="assets/route.svg" width="100%" alt="The line so far: Smart Billing (shop), SpaceXR (classroom), FarmSense AI (field), WeatherGuard AI (sky), PhishSentinel (browser), JanKavach (phone), Family Finance (home)."/>
+<img src="assets/route.svg" width="100%" alt="The line so far: Smart Billing (shop), SpaceXR (classroom), FarmSense AI (field), WeatherGuard AI (sky), PhishSentinel (browser), JanKavach (phone), Family Finance (home), Change Archaeologist (Git history)."/>
 
 <br/><br/>
 
@@ -21,11 +21,13 @@
 
 <a href="https://github.com/rknishanth152-lgtm/family-finance-manager"><img src="assets/cards/family-finance.svg" width="100%" alt="Station 07, home: Family Finance. Offline-first Android money manager in Tamil and English, kept to the paisa."/></a>
 
+<a href="https://github.com/rknishanth152-lgtm/change-archaeologist"><img src="assets/cards/change-archaeologist.svg" width="100%" alt="Station 08, Git history: Change Archaeologist. Local-first static analysis that shows how a function changed between two Git versions and whether its tests moved with it."/></a>
+
 <sub>Try them live&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://farmsense-ai-eight.vercel.app">FarmSense AI</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://weatherguard-gold.vercel.app">WeatherGuard AI</a></sub>
 
 <br/><br/>
 
-<img src="assets/timetable.svg" width="100%" alt="Timetable. Done: First Prize, SPARK'26 Hackathon, with teammate Athithya S. Now: B.Sc. Computer Technology; applied machine learning; Android with Kotlin and Jetpack Compose. Next: cleaner APIs, more tests, sharper models."/>
+<img src="assets/timetable.svg" width="100%" alt="Timetable. Done: First Prize, SPARK'26 Hackathon, with teammate Athithya S. Now: B.Sc. Computer Technology; applied machine learning; Android with Kotlin and Jetpack Compose; static analysis of Git history. Next: cleaner APIs, more tests, sharper models."/>
 
 <br/><br/>
 
@@ -33,7 +35,7 @@
 
 <br/><br/>
 
-<img src="https://skillicons.dev/icons?i=python,java,kotlin,js,html,css,react,flask,fastapi,sklearn,androidstudio,firebase,mysql,sqlite,vercel,git&theme=light&perline=8" alt="Python, Java, Kotlin, JavaScript, HTML, CSS, React, Flask, FastAPI, scikit-learn, Android Studio, Firebase, MySQL, SQLite, Vercel, Git"/>
+<img src="https://skillicons.dev/icons?i=python,java,kotlin,js,ts,html,css,react,vite,flask,fastapi,sklearn,androidstudio,firebase,mysql,sqlite,vercel,git&theme=light&perline=9" alt="Python, Java, Kotlin, JavaScript, TypeScript, HTML, CSS, React, Vite, Flask, FastAPI, scikit-learn, Android Studio, Firebase, MySQL, SQLite, Vercel, Git"/>
 
 <br/><br/>
 
