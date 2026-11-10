@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="t d">
   <title id="t">Timetable</title>
-  <desc id="d">Done: First Prize at the SPARK'26 Hackathon with teammate Athithya S. Now: B.Sc. Computer Technology student; applied machine learning on URLs, weather, crops and voice notes; Android with Kotlin and Jetpack Compose; tools that show their evidence. Next: cleaner APIs, more tests, sharper models.</desc>
+  <desc id="d">Now: B.Sc. Computer Technology student; applied machine learning on URLs, weather, crops and voice notes; Android with Kotlin and Jetpack Compose; tools that show their evidence. Next: cleaner APIs, more tests, sharper models.</desc>
   <style>
     .d{font-family:'Segoe UI Variable Display','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
     .m{font-family:ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,Menlo,monospace}
@@ -16,7 +16,7 @@
     @media (prefers-reduced-motion:reduce){*{animation:none!important}}
   </style>
 
-  <rect width="1200" height="530" rx="28" fill="#F4F1EA"/>
+  <rect width="1200" height="470" rx="28" fill="#F4F1EA"/>
 
   <g class="h">
     <text x="60" y="78" class="d ink" font-size="32" font-weight="700" letter-spacing="-.8">Timetable</text>
@@ -36,50 +36,43 @@
   </g>
 
   <!-- rows -->
-  <g class="row" style="animation-delay:.3s">
-    <rect x="60" y="166" width="1080" height="50" rx="12" fill="#EAE5DA"/>
-    <rect x="80" y="179" width="84" height="24" rx="12" fill="none" stroke="#14161A" stroke-width="2"/>
-    <text x="122" y="195.5" text-anchor="middle" class="m ink" font-size="11" font-weight="700" letter-spacing="1.4">DONE</text>
-    <text x="230" y="198" class="d ink" font-size="18" font-weight="600">First Prize, SPARK'26 Hackathon</text>
-    <text x="760" y="197" class="d mut" font-size="15.5">with teammate Athithya S.</text>
-  </g>
   <g class="row" style="animation-delay:.42s">
-    <rect x="60" y="226" width="1080" height="50" rx="12" fill="#EAE5DA"/>
-    <rect x="80" y="239" width="84" height="24" rx="12" fill="#2F55E4"/>
-    <circle cx="98" cy="251" r="3.5" fill="#FFFFFF" class="live"/>
-    <text x="128" y="255.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
-    <text x="230" y="258" class="d ink" font-size="18" font-weight="600">B.Sc. Computer Technology</text>
-    <text x="760" y="257" class="d mut" font-size="15.5">student, learning by shipping</text>
+    <rect x="60" y="166" width="1080" height="50" rx="12" fill="#EAE5DA"/>
+    <rect x="80" y="179" width="84" height="24" rx="12" fill="#2F55E4"/>
+    <circle cx="98" cy="191" r="3.5" fill="#FFFFFF" class="live"/>
+    <text x="128" y="195.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
+    <text x="230" y="198" class="d ink" font-size="18" font-weight="600">B.Sc. Computer Technology</text>
+    <text x="760" y="197" class="d mut" font-size="15.5">student, learning by shipping</text>
   </g>
   <g class="row" style="animation-delay:.54s">
-    <rect x="60" y="286" width="1080" height="50" rx="12" fill="#EAE5DA"/>
-    <rect x="80" y="299" width="84" height="24" rx="12" fill="#2F55E4"/>
-    <circle cx="98" cy="311" r="3.5" fill="#FFFFFF" class="live" style="animation-delay:-.4s"/>
-    <text x="128" y="315.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
-    <text x="230" y="318" class="d ink" font-size="18" font-weight="600">Applied machine learning</text>
-    <text x="760" y="317" class="d mut" font-size="15.5">URLs, weather, crops, voice notes</text>
+    <rect x="60" y="226" width="1080" height="50" rx="12" fill="#EAE5DA"/>
+    <rect x="80" y="239" width="84" height="24" rx="12" fill="#2F55E4"/>
+    <circle cx="98" cy="251" r="3.5" fill="#FFFFFF" class="live" style="animation-delay:-.4s"/>
+    <text x="128" y="255.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
+    <text x="230" y="258" class="d ink" font-size="18" font-weight="600">Applied machine learning</text>
+    <text x="760" y="257" class="d mut" font-size="15.5">URLs, weather, crops, voice notes</text>
   </g>
   <g class="row" style="animation-delay:.66s">
-    <rect x="60" y="346" width="1080" height="50" rx="12" fill="#EAE5DA"/>
-    <rect x="80" y="359" width="84" height="24" rx="12" fill="#2F55E4"/>
-    <circle cx="98" cy="371" r="3.5" fill="#FFFFFF" class="live" style="animation-delay:-.8s"/>
-    <text x="128" y="375.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
-    <text x="230" y="378" class="d ink" font-size="18" font-weight="600">Android with Kotlin and Jetpack Compose</text>
-    <text x="760" y="377" class="d mut" font-size="15.5">offline-first, Tamil + English</text>
+    <rect x="60" y="286" width="1080" height="50" rx="12" fill="#EAE5DA"/>
+    <rect x="80" y="299" width="84" height="24" rx="12" fill="#2F55E4"/>
+    <circle cx="98" cy="311" r="3.5" fill="#FFFFFF" class="live" style="animation-delay:-.8s"/>
+    <text x="128" y="315.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
+    <text x="230" y="318" class="d ink" font-size="18" font-weight="600">Android with Kotlin and Jetpack Compose</text>
+    <text x="760" y="317" class="d mut" font-size="15.5">offline-first, Tamil + English</text>
   </g>
   <g class="row" style="animation-delay:.78s">
-    <rect x="60" y="406" width="1080" height="50" rx="12" fill="#EAE5DA"/>
-    <rect x="80" y="419" width="84" height="24" rx="12" fill="#2F55E4"/>
-    <circle cx="98" cy="431" r="3.5" fill="#FFFFFF" class="live" style="animation-delay:-1.2s"/>
-    <text x="128" y="435.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
-    <text x="230" y="438" class="d ink" font-size="18" font-weight="600">Tools that show their evidence</text>
-    <text x="760" y="437" class="d mut" font-size="15.5">traced code changes, cited answers</text>
+    <rect x="60" y="346" width="1080" height="50" rx="12" fill="#EAE5DA"/>
+    <rect x="80" y="359" width="84" height="24" rx="12" fill="#2F55E4"/>
+    <circle cx="98" cy="371" r="3.5" fill="#FFFFFF" class="live" style="animation-delay:-1.2s"/>
+    <text x="128" y="375.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="11" font-weight="700" letter-spacing="1.4">NOW</text>
+    <text x="230" y="378" class="d ink" font-size="18" font-weight="600">Tools that show their evidence</text>
+    <text x="760" y="377" class="d mut" font-size="15.5">traced code changes, cited answers</text>
   </g>
   <g class="row" style="animation-delay:.9s">
-    <rect x="60" y="466" width="1080" height="50" rx="12" fill="#EAE5DA" opacity=".55"/>
-    <rect x="80" y="479" width="84" height="24" rx="12" fill="#EAE5DA" stroke="#5F6168" stroke-width="2" stroke-dasharray="4 4"/>
-    <text x="122" y="495.5" text-anchor="middle" class="m mut" font-size="11" font-weight="700" letter-spacing="1.4">NEXT</text>
-    <text x="230" y="498" class="d ink" font-size="18" font-weight="600">Cleaner APIs, more tests, sharper models</text>
-    <text x="760" y="497" class="d mut" font-size="15.5">build · test · debug · iterate</text>
+    <rect x="60" y="406" width="1080" height="50" rx="12" fill="#EAE5DA" opacity=".55"/>
+    <rect x="80" y="419" width="84" height="24" rx="12" fill="#EAE5DA" stroke="#5F6168" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="122" y="435.5" text-anchor="middle" class="m mut" font-size="11" font-weight="700" letter-spacing="1.4">NEXT</text>
+    <text x="230" y="438" class="d ink" font-size="18" font-weight="600">Cleaner APIs, more tests, sharper models</text>
+    <text x="760" y="437" class="d mut" font-size="15.5">build · test · debug · iterate</text>
   </g>
 </svg>

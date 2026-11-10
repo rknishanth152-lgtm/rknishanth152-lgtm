@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://github.com/rknishanth152-lgtm">
-  <img src="assets/hero.svg" width="100%" alt="RK Nishanth. I build software for the people around me: farmers, families, shopkeepers, and anyone a scam call might reach."/>
+  <img src="assets/hero.svg" width="100%" alt="RK Nishanth. I build software you can check: every answer cited, every change traced, every rupee accounted for."/>
 </a>
 
 <br/><br/>
@@ -32,7 +32,7 @@
 
 <br/><br/>
 
-<img src="assets/timetable.svg" width="100%" alt="Timetable. Done: First Prize, SPARK'26 Hackathon, with teammate Athithya S. Now: B.Sc. Computer Technology; applied machine learning; Android with Kotlin and Jetpack Compose; tools that show their evidence. Next: cleaner APIs, more tests, sharper models."/>
+<img src="assets/timetable.svg" width="100%" alt="Timetable. Now: B.Sc. Computer Technology; applied machine learning; Android with Kotlin and Jetpack Compose; tools that show their evidence. Next: cleaner APIs, more tests, sharper models."/>
 
 <br/><br/>
 

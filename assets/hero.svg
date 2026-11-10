@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="t d">
   <title id="t">RK Nishanth</title>
-  <desc id="d">RK Nishanth builds software for the people around him: farmers, families, shopkeepers, and anyone a scam call might reach. B.Sc. Computer Technology student, First Prize at the SPARK'26 Hackathon.</desc>
+  <desc id="d">RK Nishanth builds software you can check: every answer cited, every change traced, every rupee accounted for. B.Sc. Computer Technology student, First Prize at the SPARK'26 Hackathon.</desc>
   <defs>
     <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
       <circle cx="2" cy="2" r="1.2" fill="#D9D3C5"/>
@@ -62,8 +62,8 @@
   </rect>
 
   <!-- tagline -->
-  <text x="64" y="336" class="d ink u1" font-size="25">I build software for the people around me —</text>
-  <text x="64" y="370" class="d mut u2" font-size="25">farmers, families, shopkeepers, and anyone a scam call might reach.</text>
+  <text x="64" y="336" class="d ink u1" font-size="25">I build software you can check —</text>
+  <text x="64" y="370" class="d mut u2" font-size="25">every answer cited, every change traced, every rupee accounted for.</text>
 
   <!-- rotating "now" line -->
   <g class="u3">
