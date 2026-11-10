@@ -287,8 +287,6 @@ def readme(featured, older):
 
 <img src="assets/label-earlier.svg" width="100%" alt="Earlier stations"/>
 
-<br/><br/>
-
 {rows}"""
     p = ROOT / "README.md"
     text = p.read_text(encoding="utf-8")

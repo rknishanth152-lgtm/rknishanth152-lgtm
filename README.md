@@ -21,8 +21,6 @@
 
 <img src="assets/label-earlier.svg" width="100%" alt="Earlier stations"/>
 
-<br/><br/>
-
 <a href="https://github.com/rknishanth152-lgtm/smart-billing-system"><img src="assets/signs/smart-billing.svg" width="19%" alt="Station 01, Shop: Smart Billing"/></a>
 <a href="https://github.com/rknishanth152-lgtm/SpaceXR"><img src="assets/signs/spacexr.svg" width="19%" alt="Station 02, Classroom: SpaceXR"/></a>
 <a href="https://github.com/rknishanth152-lgtm/farmsense-ai"><img src="assets/signs/farmsense-ai.svg" width="19%" alt="Station 03, Field: FarmSense AI"/></a>
