@@ -18,7 +18,7 @@
 <a href="https://github.com/rknishanth152-lgtm/JanKavach"><img src="assets/cards/jankavach.svg" width="49%" alt="Station 06, Phone: JanKavach. A Telegram bot that flags scam texts and voice notes."/></a>
 
 <details>
-<summary><img src="assets/archive.svg" width="96%" alt="Show 5 earlier stations"/></summary>
+<summary><picture><img src="assets/archive.svg" width="96%" alt="Show 5 earlier stations"/></picture></summary>
 <br/>
 
 <a href="https://github.com/rknishanth152-lgtm/smart-billing-system"><img src="assets/cards/smart-billing.svg" width="49%" alt="Station 01, Shop: Smart Billing. Java Swing billing and inventory for Shree Annapurna Edible Oil Company."/></a>

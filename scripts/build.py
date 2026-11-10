@@ -4,7 +4,9 @@ Adding a project: draw its card in scripts/cards.py, add one entry to STATIONS
 below, run this script. It regenerates the cards, the route map, the footer,
 the "earlier stations" toggle, and the stations block in README.md. The four
 newest stations are shown as cards; the rest fold into the toggle, so the
-README stays the same length however long the line gets.
+README stays the same length however long the line gets. The toggle image
+is wrapped in <picture> because GitHub links every bare <img> to its file,
+and that link would swallow the click meant to open the section.
 """
 import math
 import re
@@ -246,7 +248,7 @@ def readme(featured, older):
         block += f"""
 
 <details>
-<summary><img src="assets/archive.svg" width="96%" alt="Show {len(older)} earlier stations"/></summary>
+<summary><picture><img src="assets/archive.svg" width="96%" alt="Show {len(older)} earlier stations"/></picture></summary>
 <br/>
 
 {pairs(older)}
