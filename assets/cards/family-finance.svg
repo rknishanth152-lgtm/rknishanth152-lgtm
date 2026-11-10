@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360" role="img" aria-labelledby="t d">
   <title id="t">Family Finance</title>
   <desc id="d">Private, offline-first family money manager for Android in Tamil and English, with 195 unit tests, 29 rules tests and 22 device tests.</desc>
   <style>
@@ -14,12 +14,12 @@
     .v{animation:fade .8s ease-out .3s both}
     .arrow{animation:nudge 1.8s ease-in-out infinite}
 
-    @keyframes rA1{0%,2%{opacity:0;transform:translateY(-8px)}6%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
-    @keyframes rB1{0%,26%{opacity:0;transform:translateY(-8px)}30%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
-    @keyframes rB2{0%,52%{opacity:0;transform:translateY(-8px)}56%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
-    @keyframes rA2{0%,76%{opacity:0;transform:translateY(-8px)}80%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
-    @keyframes pAB{0%,8%{opacity:0;transform:none}10%{opacity:1;transform:none}26%{opacity:1;transform:translateX(92px)}28%,100%{opacity:0;transform:translateX(92px)}}
-    @keyframes pBA{0%,58%{opacity:0;transform:translateX(92px)}60%{opacity:1;transform:translateX(92px)}76%{opacity:1;transform:none}78%,100%{opacity:0;transform:none}}
+    @keyframes rA1{0%,2%{opacity:0;transform:translateY(-6px)}6%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
+    @keyframes rB1{0%,26%{opacity:0;transform:translateY(-6px)}30%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
+    @keyframes rB2{0%,52%{opacity:0;transform:translateY(-6px)}56%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes rA2{0%,76%{opacity:0;transform:translateY(-6px)}80%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes pAB{0%,8%{opacity:0;transform:none}10%{opacity:1;transform:none}26%{opacity:1;transform:translateX(36px)}28%,100%{opacity:0;transform:translateX(36px)}}
+    @keyframes pBA{0%,58%{opacity:0;transform:translateX(36px)}60%{opacity:1;transform:translateX(36px)}76%{opacity:1;transform:none}78%,100%{opacity:0;transform:none}}
     .rA1{animation:rA1 12s ease-out infinite}.rB1{animation:rB1 12s ease-out infinite}
     .rB2{animation:rB2 12s ease-out infinite}.rA2{animation:rA2 12s ease-out infinite}
     .pAB{animation:pAB 12s cubic-bezier(.5,0,.5,1) infinite}.pBA{animation:pBA 12s cubic-bezier(.5,0,.5,1) infinite}
@@ -27,43 +27,40 @@
 
     @media (prefers-reduced-motion:reduce){*{animation:none!important}.alt{opacity:0}}
   </style>
-  <rect width="1200" height="380" rx="24" fill="#F4F1EA"/>
+  <rect width="600" height="360" rx="24" fill="#F4F1EA"/>
   <g class="e e1">
-    <circle cx="51" cy="49" r="10" fill="#F4F1EA" stroke="#14161A" stroke-width="4.5"/>
-    <text x="72" y="53.5" class="m mut" font-size="12" letter-spacing="1.3">STATION 07 · HOME</text>
+    <circle cx="47" cy="47" r="7" fill="#F4F1EA" stroke="#14161A" stroke-width="3.5"/>
+    <text x="64" y="51.5" class="m mut" font-size="12" letter-spacing="1.3">STATION 07 · HOME</text>
   </g>
-  <text x="40" y="118" class="d ink e e2" font-size="48" font-weight="700" letter-spacing="-1.4">Family Finance</text>
-  <g class="e e3"><text x="42" y="160" class="d ink" font-size="21">Two people, two phones, one shared set of books,</text><text x="42" y="188" class="d ink" font-size="21">kept to the paisa.</text></g>
-  <g class="e e4">
-    <text x="42" y="220" class="d mut" font-size="15.5">Offline-first Android money manager in Tamil and English. Either phone</text><text x="42" y="242" class="d mut" font-size="15.5">can add or edit, and both stay in sync after a day offline in the fields.</text>
-    <text x="42" y="270" class="m mut" font-size="12" letter-spacing=".4">KOTLIN · JETPACK COMPOSE · MATERIAL 3 · FIREBASE AUTH + FIRESTORE</text>
-  </g>
-  <g class="e e5"><text x="44" y="326" class="d ink" font-size="38" font-weight="700" letter-spacing="-1">195</text><text x="46" y="350" class="m mut" font-size="11" letter-spacing="1.2">UNIT TESTS</text><text x="194" y="326" class="d ink" font-size="38" font-weight="700" letter-spacing="-1">29</text><text x="196" y="350" class="m mut" font-size="11" letter-spacing="1.2">RULES TESTS</text><text x="344" y="326" class="d ink" font-size="38" font-weight="700" letter-spacing="-1">22</text><text x="346" y="350" class="m mut" font-size="11" letter-spacing="1.2">DEVICE TESTS</text></g>
+  <text x="38" y="106" class="d ink e e2" font-size="34" font-weight="700" letter-spacing="-.8">Family Finance</text>
+  <g class="e e3"><text x="40" y="150" class="d ink" font-size="16">Two phones, one shared set of books,</text><text x="40" y="174" class="d ink" font-size="16">kept to the paisa. Offline-first,</text><text x="40" y="198" class="d ink" font-size="16">in Tamil and English.</text></g>
+  <g class="e e4"><text x="40" y="244" class="m mut" font-size="12" letter-spacing=".4">KOTLIN · COMPOSE · FIREBASE</text><text x="40" y="264" class="m mut" font-size="12" letter-spacing=".4">195 UNIT · 29 RULES · 22 DEVICE TESTS</text></g>
   <g class="e e5">
-    <text x="560" y="350" class="d ink" font-size="15" font-weight="600">View repository</text>
-    <g class="arrow"><text x="680" y="350" class="d acc" font-size="16" font-weight="700">→</text></g>
+    <text x="40" y="320" class="d ink" font-size="15" font-weight="600">View repository</text>
+    <g class="arrow"><text x="160" y="320" class="d acc" font-size="16" font-weight="700">→</text></g>
   </g>
   <g class="v">
-    <rect x="790" y="50" width="128" height="250" rx="22" fill="#FFFFFF" stroke="#14161A" stroke-width="3"/>
-    <rect x="834" y="59" width="40" height="5" rx="2.5" fill="#14161A"/>
-    <text x="854" y="90" text-anchor="middle" class="ta ink" font-size="11.5" font-weight="700">வரவு · செலவு</text>
-    <g class="rA1 hide"><rect x="800" y="104" width="108" height="22" rx="8" fill="#2F55E4" opacity=".14"/><circle cx="812" cy="115" r="6" fill="#2F55E4"/><rect x="824" y="112" width="40" height="6" rx="3" fill="#2F55E4"/><text x="878" y="118" class="m acc" font-size="9" font-weight="700">₹</text><rect x="886" y="112" width="16" height="6" rx="3" fill="#2F55E4"/></g><g class="rA2 hide"><rect x="800" y="104" width="108" height="22" rx="8" fill="#2F55E4" opacity=".14"/><circle cx="812" cy="115" r="6" fill="#2F55E4"/><rect x="824" y="112" width="40" height="6" rx="3" fill="#2F55E4"/><text x="878" y="118" class="m acc" font-size="9" font-weight="700">₹</text><rect x="886" y="112" width="16" height="6" rx="3" fill="#2F55E4"/></g>
-    <circle cx="812" cy="140" r="6" fill="#EAE5DA"/><rect x="824" y="137" width="46" height="6" rx="3" fill="#CFC8B8"/><text x="878" y="143" class="m mut" font-size="9">₹</text><rect x="886" y="137" width="16" height="6" rx="3" fill="#CFC8B8"/><circle cx="812" cy="166" r="6" fill="#EAE5DA"/><rect x="824" y="163" width="38" height="6" rx="3" fill="#CFC8B8"/><text x="878" y="169" class="m mut" font-size="9">₹</text><rect x="886" y="163" width="16" height="6" rx="3" fill="#CFC8B8"/><circle cx="812" cy="192" r="6" fill="#EAE5DA"/><rect x="824" y="189" width="52" height="6" rx="3" fill="#CFC8B8"/><text x="878" y="195" class="m mut" font-size="9">₹</text><rect x="886" y="189" width="16" height="6" rx="3" fill="#CFC8B8"/><circle cx="812" cy="218" r="6" fill="#EAE5DA"/><rect x="824" y="215" width="32" height="6" rx="3" fill="#CFC8B8"/><text x="878" y="221" class="m mut" font-size="9">₹</text><rect x="886" y="215" width="16" height="6" rx="3" fill="#CFC8B8"/>
-    <rect x="800" y="242" width="108" height="44" rx="10" fill="#14161A"/>
-    <text x="812" y="260" class="m" fill="#F4F1EA" opacity=".7" font-size="8.5" letter-spacing="1">BALANCE</text>
-    <rect x="812" y="268" width="58" height="7" rx="3" fill="#F4F1EA"/>
-    <rect x="1010" y="50" width="128" height="250" rx="22" fill="#FFFFFF" stroke="#14161A" stroke-width="3"/>
-    <rect x="1054" y="59" width="40" height="5" rx="2.5" fill="#14161A"/>
-    <text x="1074" y="90" text-anchor="middle" class="d ink" font-size="11.5" font-weight="700">Income · Expense</text>
-    <g class="rB1 hide"><rect x="1020" y="104" width="108" height="22" rx="8" fill="#2F55E4" opacity=".14"/><circle cx="1032" cy="115" r="6" fill="#2F55E4"/><rect x="1044" y="112" width="40" height="6" rx="3" fill="#2F55E4"/><text x="1098" y="118" class="m acc" font-size="9" font-weight="700">₹</text><rect x="1106" y="112" width="16" height="6" rx="3" fill="#2F55E4"/></g><g class="rB2 hide"><rect x="1020" y="104" width="108" height="22" rx="8" fill="#2F55E4" opacity=".14"/><circle cx="1032" cy="115" r="6" fill="#2F55E4"/><rect x="1044" y="112" width="40" height="6" rx="3" fill="#2F55E4"/><text x="1098" y="118" class="m acc" font-size="9" font-weight="700">₹</text><rect x="1106" y="112" width="16" height="6" rx="3" fill="#2F55E4"/></g>
-    <circle cx="1032" cy="140" r="6" fill="#EAE5DA"/><rect x="1044" y="137" width="46" height="6" rx="3" fill="#CFC8B8"/><text x="1098" y="143" class="m mut" font-size="9">₹</text><rect x="1106" y="137" width="16" height="6" rx="3" fill="#CFC8B8"/><circle cx="1032" cy="166" r="6" fill="#EAE5DA"/><rect x="1044" y="163" width="38" height="6" rx="3" fill="#CFC8B8"/><text x="1098" y="169" class="m mut" font-size="9">₹</text><rect x="1106" y="163" width="16" height="6" rx="3" fill="#CFC8B8"/><circle cx="1032" cy="192" r="6" fill="#EAE5DA"/><rect x="1044" y="189" width="52" height="6" rx="3" fill="#CFC8B8"/><text x="1098" y="195" class="m mut" font-size="9">₹</text><rect x="1106" y="189" width="16" height="6" rx="3" fill="#CFC8B8"/><circle cx="1032" cy="218" r="6" fill="#EAE5DA"/><rect x="1044" y="215" width="32" height="6" rx="3" fill="#CFC8B8"/><text x="1098" y="221" class="m mut" font-size="9">₹</text><rect x="1106" y="215" width="16" height="6" rx="3" fill="#CFC8B8"/>
-    <rect x="1020" y="242" width="108" height="44" rx="10" fill="#14161A"/>
-    <text x="1032" y="260" class="m" fill="#F4F1EA" opacity=".7" font-size="8.5" letter-spacing="1">BALANCE</text>
-    <rect x="1032" y="268" width="58" height="7" rx="3" fill="#F4F1EA"/>
-    <path d="M926 175 H1002" stroke="#CFC8B8" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"/>
-    <g class="pAB hide"><rect x="912" y="167" width="24" height="16" rx="5" fill="#2F55E4"/><text x="924" y="179" text-anchor="middle" class="m" fill="#FFFFFF" font-size="10" font-weight="700">₹</text></g>
-    <g class="pBA hide"><rect x="912" y="167" width="24" height="16" rx="5" fill="#2F55E4"/><text x="924" y="179" text-anchor="middle" class="m" fill="#FFFFFF" font-size="10" font-weight="700">₹</text></g>
-    <text x="854" y="326" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">PHONE A · TAMIL</text>
-    <text x="1074" y="326" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">PHONE B · ENGLISH</text>
+    <rect x="372" y="66" width="84" height="206" rx="16" fill="#FFFFFF" stroke="#14161A" stroke-width="3"/>
+    <rect x="402" y="74" width="24" height="4" rx="2" fill="#14161A"/>
+    <text x="414" y="100" text-anchor="middle" class="ta ink" font-size="9" font-weight="700">வரவு · செலவு</text>
+    <g class="rA1 hide"><rect x="378" y="110" width="72" height="18" rx="6" fill="#2F55E4" opacity=".14"/><circle cx="386" cy="119" r="4" fill="#2F55E4"/><rect x="394" y="116.5" width="26" height="5" rx="2.5" fill="#2F55E4"/><text x="429" y="122" class="m acc" font-size="7.5" font-weight="700">₹</text><rect x="436" y="116.5" width="10" height="5" rx="2.5" fill="#2F55E4"/></g><g class="rA2 hide"><rect x="378" y="110" width="72" height="18" rx="6" fill="#2F55E4" opacity=".14"/><circle cx="386" cy="119" r="4" fill="#2F55E4"/><rect x="394" y="116.5" width="26" height="5" rx="2.5" fill="#2F55E4"/><text x="429" y="122" class="m acc" font-size="7.5" font-weight="700">₹</text><rect x="436" y="116.5" width="10" height="5" rx="2.5" fill="#2F55E4"/></g>
+    <circle cx="386" cy="143" r="4" fill="#EAE5DA"/><rect x="394" y="140" width="30" height="5" rx="2.5" fill="#CFC8B8"/><text x="429" y="146" class="m mut" font-size="7.5">₹</text><rect x="436" y="140" width="10" height="5" rx="2.5" fill="#CFC8B8"/><circle cx="386" cy="165" r="4" fill="#EAE5DA"/><rect x="394" y="162" width="24" height="5" rx="2.5" fill="#CFC8B8"/><text x="429" y="168" class="m mut" font-size="7.5">₹</text><rect x="436" y="162" width="10" height="5" rx="2.5" fill="#CFC8B8"/><circle cx="386" cy="187" r="4" fill="#EAE5DA"/><rect x="394" y="184" width="34" height="5" rx="2.5" fill="#CFC8B8"/><text x="429" y="190" class="m mut" font-size="7.5">₹</text><rect x="436" y="184" width="10" height="5" rx="2.5" fill="#CFC8B8"/><circle cx="386" cy="209" r="4" fill="#EAE5DA"/><rect x="394" y="206" width="20" height="5" rx="2.5" fill="#CFC8B8"/><text x="429" y="212" class="m mut" font-size="7.5">₹</text><rect x="436" y="206" width="10" height="5" rx="2.5" fill="#CFC8B8"/>
+    <rect x="378" y="230" width="72" height="32" rx="8" fill="#14161A"/>
+    <text x="386" y="243" class="m" fill="#F4F1EA" opacity=".7" font-size="7" letter-spacing=".8">BALANCE</text>
+    <rect x="386" y="249" width="40" height="5" rx="2.5" fill="#F4F1EA"/>
+    <rect x="484" y="66" width="84" height="206" rx="16" fill="#FFFFFF" stroke="#14161A" stroke-width="3"/>
+    <rect x="514" y="74" width="24" height="4" rx="2" fill="#14161A"/>
+    <text x="526" y="100" text-anchor="middle" class="d ink" font-size="9" font-weight="700">Income · Expense</text>
+    <g class="rB1 hide"><rect x="490" y="110" width="72" height="18" rx="6" fill="#2F55E4" opacity=".14"/><circle cx="498" cy="119" r="4" fill="#2F55E4"/><rect x="506" y="116.5" width="26" height="5" rx="2.5" fill="#2F55E4"/><text x="541" y="122" class="m acc" font-size="7.5" font-weight="700">₹</text><rect x="548" y="116.5" width="10" height="5" rx="2.5" fill="#2F55E4"/></g><g class="rB2 hide"><rect x="490" y="110" width="72" height="18" rx="6" fill="#2F55E4" opacity=".14"/><circle cx="498" cy="119" r="4" fill="#2F55E4"/><rect x="506" y="116.5" width="26" height="5" rx="2.5" fill="#2F55E4"/><text x="541" y="122" class="m acc" font-size="7.5" font-weight="700">₹</text><rect x="548" y="116.5" width="10" height="5" rx="2.5" fill="#2F55E4"/></g>
+    <circle cx="498" cy="143" r="4" fill="#EAE5DA"/><rect x="506" y="140" width="30" height="5" rx="2.5" fill="#CFC8B8"/><text x="541" y="146" class="m mut" font-size="7.5">₹</text><rect x="548" y="140" width="10" height="5" rx="2.5" fill="#CFC8B8"/><circle cx="498" cy="165" r="4" fill="#EAE5DA"/><rect x="506" y="162" width="24" height="5" rx="2.5" fill="#CFC8B8"/><text x="541" y="168" class="m mut" font-size="7.5">₹</text><rect x="548" y="162" width="10" height="5" rx="2.5" fill="#CFC8B8"/><circle cx="498" cy="187" r="4" fill="#EAE5DA"/><rect x="506" y="184" width="34" height="5" rx="2.5" fill="#CFC8B8"/><text x="541" y="190" class="m mut" font-size="7.5">₹</text><rect x="548" y="184" width="10" height="5" rx="2.5" fill="#CFC8B8"/><circle cx="498" cy="209" r="4" fill="#EAE5DA"/><rect x="506" y="206" width="20" height="5" rx="2.5" fill="#CFC8B8"/><text x="541" y="212" class="m mut" font-size="7.5">₹</text><rect x="548" y="206" width="10" height="5" rx="2.5" fill="#CFC8B8"/>
+    <rect x="490" y="230" width="72" height="32" rx="8" fill="#14161A"/>
+    <text x="498" y="243" class="m" fill="#F4F1EA" opacity=".7" font-size="7" letter-spacing=".8">BALANCE</text>
+    <rect x="498" y="249" width="40" height="5" rx="2.5" fill="#F4F1EA"/>
+    <path d="M458 165 H482" stroke="#CFC8B8" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+    <g class="pAB hide"><rect x="446" y="158" width="18" height="14" rx="4" fill="#2F55E4"/><text x="455" y="168.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="8.5" font-weight="700">₹</text></g>
+    <g class="pBA hide"><rect x="446" y="158" width="18" height="14" rx="4" fill="#2F55E4"/><text x="455" y="168.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="8.5" font-weight="700">₹</text></g>
+    <text x="414" y="294" text-anchor="middle" class="m mut" font-size="9.5" letter-spacing="1">TAMIL</text>
+    <text x="526" y="294" text-anchor="middle" class="m mut" font-size="9.5" letter-spacing="1">ENGLISH</text>
+    <text x="470" y="334" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">TWO PHONES · ONE SET OF BOOKS</text>
   </g>
 </svg>

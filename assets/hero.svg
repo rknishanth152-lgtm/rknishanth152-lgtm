@@ -70,7 +70,7 @@
     <circle cx="70" cy="424" r="5" class="acc live"/>
     <text x="84" y="429" class="m ink" font-size="14" letter-spacing=".5">NOW</text>
     <g class="m ink" font-size="14">
-      <text x="128" y="429" class="p p1">training an XGBoost model to catch phishing URLs</text>
+      <text x="128" y="429" class="p p1">linking every answer to the passage it came from</text>
       <text x="128" y="429" class="p p2">shipping an offline-first Android app in Tamil and English</text>
       <text x="128" y="429" class="p p3">teaching a Random Forest to read tomorrow's rain</text>
       <text x="128" y="429" class="p p4">tracing how functions change across Git history</text>

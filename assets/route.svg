@@ -1,76 +1,86 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="434" viewBox="0 0 1200 434" role="img" aria-labelledby="t d">
   <title id="t">The line so far</title>
-  <desc id="d">Eight projects drawn as stations on one line: Smart Billing at the shop counter, SpaceXR in the classroom, FarmSense AI in the field, WeatherGuard AI in the sky, PhishSentinel in the browser, JanKavach on the phone, Family Finance at home, and Change Archaeologist in Git history.</desc>
+  <desc id="d">Nine projects drawn as stations on one line: Smart Billing (shop), SpaceXR (classroom), FarmSense AI (field), WeatherGuard AI (sky), PhishSentinel (browser), JanKavach (phone), Family Finance (home), Change Archaeologist (git history), PaperPilot (library).</desc>
   <defs>
-    <path id="line" d="M60 214 H290 L350 274 H715 L775 214 H1140"/>
+    <path id="line" d="M110 190 H170 H385 H600 H815 H1030 H1090 A70 70 0 0 1 1090 330 H1030 H815 H600 H385"/>
   </defs>
   <style>
     .d{font-family:'Segoe UI Variable Display','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
     .m{font-family:ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,Menlo,monospace}
     .ink{fill:#14161A}.mut{fill:#5F6168}
-    @keyframes draw{from{stroke-dashoffset:1140}to{stroke-dashoffset:0}}
+    @keyframes draw{from{stroke-dashoffset:1905}to{stroke-dashoffset:0}}
     @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
     @keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:none}}
     @keyframes pass{0%{opacity:.9;transform:scale(1)}9%{opacity:0;transform:scale(2.6)}100%{opacity:0;transform:scale(2.6)}}
-    .route{stroke-dasharray:1140;animation:draw 1.6s cubic-bezier(.6,0,.2,1) .2s both}
+    @keyframes breathe{0%,100%{opacity:1}50%{opacity:.35}}
+    .route{stroke-dasharray:1905;animation:draw 2s cubic-bezier(.6,0,.2,1) .2s both}
     .h{animation:up .7s ease-out both}
     .st{transform-box:fill-box;transform-origin:center;animation:pop .45s cubic-bezier(.3,1.6,.5,1) both}
     .lb{animation:up .6s ease-out both}
-    .ping{transform-box:fill-box;transform-origin:center;opacity:0;animation:pass 12s ease-out infinite}
+    .ping{transform-box:fill-box;transform-origin:center;opacity:0;animation:pass 13.51s ease-out infinite}
+    .next{animation:breathe 2.4s ease-in-out infinite}
     @media (prefers-reduced-motion:reduce){*{animation:none!important}.ping{opacity:0}}
   </style>
 
-  <rect width="1200" height="380" rx="28" fill="#F4F1EA"/>
+  <rect width="1200" height="434" rx="28" fill="#F4F1EA"/>
 
   <g class="h">
     <text x="60" y="72" class="d ink" font-size="32" font-weight="700" letter-spacing="-.8">The line so far</text>
-    <text x="60" y="102" class="m mut" font-size="12.5" letter-spacing="1.2">EIGHT PROJECTS · EIGHT PLACES THEY RUN</text>
+    <text x="60" y="102" class="m mut" font-size="12.5" letter-spacing="1.2">NINE PROJECTS · NINE PLACES THEY RUN</text>
   </g>
-  <text x="1140" y="72" text-anchor="end" class="m mut h" font-size="12.5" letter-spacing="1.2" style="animation-delay:.15s">SHOP → CLASSROOM → FIELD → SKY → BROWSER → PHONE → HOME → GIT HISTORY</text>
+  <g class="h" style="animation-delay:.15s">
+    <circle cx="806" cy="67" r="8" fill="#F4F1EA" stroke="#2F55E4" stroke-width="4"/>
+    <text x="822" y="71.5" class="m mut" font-size="12" letter-spacing="1.2">NEWEST</text>
+    <circle cx="930" cy="67" r="8" fill="#F4F1EA" stroke="#5F6168" stroke-width="2.5" stroke-dasharray="3 4"/>
+    <text x="946" y="71.5" class="m mut" font-size="12" letter-spacing="1.2">NEXT · BEING BUILT</text>
+  </g>
 
+  <path d="M385 330 H170" fill="none" stroke="#14161A" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 18" opacity=".55"/>
   <use xlink:href="#line" class="route" fill="none" stroke="#14161A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- pings fire as the train passes (delay = 1.9s start + distance/length × 11.28s of travel) -->
+  <!-- pings fire as the train passes: 1.9s start + distance / 150px per second -->
   <g fill="none" stroke="#2F55E4" stroke-width="3">
-    <circle cx="105" cy="214" r="11" class="ping" style="animation-delay:2.35s"/>
-    <circle cx="225" cy="214" r="11" class="ping" style="animation-delay:3.55s"/>
-    <circle cx="400" cy="274" r="11" class="ping" style="animation-delay:5.54s"/>
-    <circle cx="540" cy="274" r="11" class="ping" style="animation-delay:6.94s"/>
-    <circle cx="675" cy="274" r="11" class="ping" style="animation-delay:8.29s"/>
-    <circle cx="800" cy="214" r="11" class="ping" style="animation-delay:9.79s"/>
-    <circle cx="915" cy="214" r="11" class="ping" style="animation-delay:10.93s"/>
-    <circle cx="1080" cy="214" r="14" class="ping" style="animation-delay:12.58s"/>
+    <circle cx="170" cy="190" r="11" class="ping" style="animation-delay:2.30s"/>
+    <circle cx="385" cy="190" r="11" class="ping" style="animation-delay:3.73s"/>
+    <circle cx="600" cy="190" r="11" class="ping" style="animation-delay:5.17s"/>
+    <circle cx="815" cy="190" r="11" class="ping" style="animation-delay:6.60s"/>
+    <circle cx="1030" cy="190" r="11" class="ping" style="animation-delay:8.03s"/>
+    <circle cx="1030" cy="330" r="11" class="ping" style="animation-delay:10.30s"/>
+    <circle cx="815" cy="330" r="11" class="ping" style="animation-delay:11.73s"/>
+    <circle cx="600" cy="330" r="11" class="ping" style="animation-delay:13.17s"/>
+    <circle cx="385" cy="330" r="14" class="ping" style="animation-delay:14.60s"/>
   </g>
-
   <g fill="#F4F1EA" stroke="#14161A" stroke-width="4.5">
-    <circle cx="105" cy="214" r="11" class="st" style="animation-delay:.3s"/>
-    <circle cx="225" cy="214" r="11" class="st" style="animation-delay:.45s"/>
-    <circle cx="400" cy="274" r="11" class="st" style="animation-delay:.75s"/>
-    <circle cx="540" cy="274" r="11" class="st" style="animation-delay:.9s"/>
-    <circle cx="675" cy="274" r="11" class="st" style="animation-delay:1.05s"/>
-    <circle cx="800" cy="214" r="11" class="st" style="animation-delay:1.3s"/>
-    <circle cx="915" cy="214" r="11" class="st" style="animation-delay:1.42s"/>
-    <circle cx="1080" cy="214" r="15" stroke="#2F55E4" stroke-width="6" class="st" style="animation-delay:1.55s"/>
+    <circle cx="170" cy="190" r="11" class="st" style="animation-delay:0.30s"/>
+    <circle cx="385" cy="190" r="11" class="st" style="animation-delay:0.42s"/>
+    <circle cx="600" cy="190" r="11" class="st" style="animation-delay:0.54s"/>
+    <circle cx="815" cy="190" r="11" class="st" style="animation-delay:0.66s"/>
+    <circle cx="1030" cy="190" r="11" class="st" style="animation-delay:0.78s"/>
+    <circle cx="1030" cy="330" r="11" class="st" style="animation-delay:0.90s"/>
+    <circle cx="815" cy="330" r="11" class="st" style="animation-delay:1.02s"/>
+    <circle cx="600" cy="330" r="11" class="st" style="animation-delay:1.14s"/>
+    <circle cx="385" cy="330" r="15" stroke="#2F55E4" stroke-width="6" class="st" style="animation-delay:1.26s"/>
   </g>
+  <g class="next"><circle cx="170" cy="330" r="11" fill="#F4F1EA" stroke="#5F6168" stroke-width="3" stroke-dasharray="3 4"/></g>
+  <text x="170" y="368" text-anchor="middle" class="m mut" font-size="11.5" letter-spacing="1.2">NEXT STATION</text>
 
-  <!-- labels: above the upper track, below the lower track -->
   <g text-anchor="middle">
-    <g class="lb" style="animation-delay:.5s"><text x="105" y="156" class="m mut" font-size="11.5" letter-spacing="1.2">01 · SHOP</text><text x="105" y="182" class="d ink" font-size="17" font-weight="600">Smart Billing</text></g>
-    <g class="lb" style="animation-delay:.65s"><text x="225" y="156" class="m mut" font-size="11.5" letter-spacing="1.2">02 · CLASSROOM</text><text x="225" y="182" class="d ink" font-size="17" font-weight="600">SpaceXR</text></g>
-    <g class="lb" style="animation-delay:.95s"><text x="400" y="320" class="d ink" font-size="17" font-weight="600">FarmSense AI</text><text x="400" y="344" class="m mut" font-size="11.5" letter-spacing="1.2">03 · FIELD</text></g>
-    <g class="lb" style="animation-delay:1.1s"><text x="540" y="320" class="d ink" font-size="17" font-weight="600">WeatherGuard AI</text><text x="540" y="344" class="m mut" font-size="11.5" letter-spacing="1.2">04 · SKY</text></g>
-    <g class="lb" style="animation-delay:1.25s"><text x="675" y="320" class="d ink" font-size="17" font-weight="600">PhishSentinel</text><text x="675" y="344" class="m mut" font-size="11.5" letter-spacing="1.2">05 · BROWSER</text></g>
-    <g class="lb" style="animation-delay:1.45s"><text x="800" y="156" class="m mut" font-size="11.5" letter-spacing="1.2">06 · PHONE</text><text x="800" y="182" class="d ink" font-size="17" font-weight="600">JanKavach</text></g>
-    <g class="lb" style="animation-delay:1.6s"><text x="915" y="156" class="m mut" font-size="11.5" letter-spacing="1.2">07 · HOME</text><text x="915" y="182" class="d ink" font-size="17" font-weight="600">Family Finance</text></g>
-    <g class="lb" style="animation-delay:1.75s"><text x="1080" y="156" class="m mut" font-size="11.5" letter-spacing="1.2">08 · GIT HISTORY</text><text x="1080" y="182" class="d ink" font-size="17" font-weight="700">Change Archaeologist</text></g>
+    <g class="lb" style="animation-delay:0.50s"><text x="170" y="228" class="d ink" font-size="17" font-weight="600">Smart Billing</text><text x="170" y="250" class="m mut" font-size="11.5" letter-spacing="1.2">01 · SHOP</text></g>
+    <g class="lb" style="animation-delay:0.62s"><text x="385" y="228" class="d ink" font-size="17" font-weight="600">SpaceXR</text><text x="385" y="250" class="m mut" font-size="11.5" letter-spacing="1.2">02 · CLASSROOM</text></g>
+    <g class="lb" style="animation-delay:0.74s"><text x="600" y="228" class="d ink" font-size="17" font-weight="600">FarmSense AI</text><text x="600" y="250" class="m mut" font-size="11.5" letter-spacing="1.2">03 · FIELD</text></g>
+    <g class="lb" style="animation-delay:0.86s"><text x="815" y="228" class="d ink" font-size="17" font-weight="600">WeatherGuard AI</text><text x="815" y="250" class="m mut" font-size="11.5" letter-spacing="1.2">04 · SKY</text></g>
+    <g class="lb" style="animation-delay:0.98s"><text x="1030" y="228" class="d ink" font-size="17" font-weight="600">PhishSentinel</text><text x="1030" y="250" class="m mut" font-size="11.5" letter-spacing="1.2">05 · BROWSER</text></g>
+    <g class="lb" style="animation-delay:1.10s"><text x="1030" y="368" class="d ink" font-size="17" font-weight="600">JanKavach</text><text x="1030" y="390" class="m mut" font-size="11.5" letter-spacing="1.2">06 · PHONE</text></g>
+    <g class="lb" style="animation-delay:1.22s"><text x="815" y="368" class="d ink" font-size="17" font-weight="600">Family Finance</text><text x="815" y="390" class="m mut" font-size="11.5" letter-spacing="1.2">07 · HOME</text></g>
+    <g class="lb" style="animation-delay:1.34s"><text x="600" y="368" class="d ink" font-size="17" font-weight="600">Change Archaeologist</text><text x="600" y="390" class="m mut" font-size="11.5" letter-spacing="1.2">08 · GIT HISTORY</text></g>
+    <g class="lb" style="animation-delay:1.46s"><text x="385" y="368" class="d ink" font-size="17" font-weight="700">PaperPilot</text><text x="385" y="390" class="m mut" font-size="11.5" letter-spacing="1.2">09 · LIBRARY</text></g>
   </g>
 
-  <!-- the train -->
   <g opacity="0">
     <set attributeName="opacity" to="1" begin="1.9s" fill="freeze"/>
     <rect x="-20" y="-8" width="40" height="16" rx="8" fill="#2F55E4"/>
     <rect x="6" y="-3.5" width="8" height="7" rx="2" fill="#F4F1EA"/>
-    <animateMotion dur="12s" begin="1.9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.94;1" calcMode="linear">
+    <animateMotion dur="13.51s" begin="1.9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.94;1" calcMode="linear">
       <mpath xlink:href="#line"/>
     </animateMotion>
   </g>

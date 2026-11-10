@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" role="img" aria-labelledby="t">
+  <title id="t">Show 5 earlier stations</title>
+  <style>
+    .d{font-family:'Segoe UI Variable Display','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
+    .m{font-family:ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,Menlo,monospace}
+    .ink{fill:#14161A}.mut{fill:#5F6168}
+    @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    @keyframes bob{0%,100%{transform:none}50%{transform:translateY(4px)}}
+    .h{animation:up .7s ease-out both}
+    .bob{animation:bob 1.8s ease-in-out infinite}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <rect width="1200" height="120" rx="28" fill="#F4F1EA"/>
+  <g class="h">
+    <text x="60" y="60" class="d ink" font-size="30" font-weight="700" letter-spacing="-.8">Earlier stations</text>
+    <text x="60" y="88" class="m mut" font-size="12" letter-spacing="1.2">01–05 · SHOP → CLASSROOM → FIELD → SKY → BROWSER</text>
+  </g>
+  <g class="h" style="animation-delay:.15s">
+    <rect x="924" y="38" width="216" height="44" rx="22" fill="#14161A"/>
+    <text x="1010" y="65" text-anchor="middle" class="m" fill="#F4F1EA" font-size="13" font-weight="700" letter-spacing="1.5">SHOW FIVE MORE</text>
+    <g class="bob"><path d="M1102 56 l8 8 l8 -8" fill="none" stroke="#F4F1EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+</svg>

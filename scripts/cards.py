@@ -1,4 +1,4 @@
-"""Builds the station cards in assets/cards/. Run: python scripts/cards.py
+"""Draws the station cards in assets/cards/. Run via: python scripts/build.py
 
 Every card shares one frame (station tag, title, description, stack, link) and
 carries its own small animated vignette. Motion is transform/opacity only.
@@ -52,7 +52,7 @@ def half(name, station, title, desc_lines, stack_lines, vignette, style, desc_al
     <circle cx="47" cy="47" r="7" fill="{PAPER}" stroke="{INK}" stroke-width="3.5"/>
     <text x="64" y="51.5" class="m mut" font-size="12" letter-spacing="1.3">{station}</text>
   </g>
-  <text x="38" y="106" class="d ink e e2" font-size="34" font-weight="700" letter-spacing="-.8">{title}</text>
+  <text x="38" y="106" class="d ink e e2" font-size="{34 if len(title) <= 15 else 28}" font-weight="700" letter-spacing="-.8">{title}</text>
   <g class="e e3">{desc}</g>
   <g class="e e4">{stack}</g>
   <g class="e e5">
@@ -249,14 +249,14 @@ half(
     "Telegram bot and dashboard that analyses suspicious texts and voice notes for fraud and routes victims to the 1930 helpline.",
 )
 
-# ---------------------------------------------------------------- 07 home (wide)
+# ---------------------------------------------------------------- 07 home
 ff_style = """
-    @keyframes rA1{0%,2%{opacity:0;transform:translateY(-8px)}6%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
-    @keyframes rB1{0%,26%{opacity:0;transform:translateY(-8px)}30%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
-    @keyframes rB2{0%,52%{opacity:0;transform:translateY(-8px)}56%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
-    @keyframes rA2{0%,76%{opacity:0;transform:translateY(-8px)}80%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
-    @keyframes pAB{0%,8%{opacity:0;transform:none}10%{opacity:1;transform:none}26%{opacity:1;transform:translateX(92px)}28%,100%{opacity:0;transform:translateX(92px)}}
-    @keyframes pBA{0%,58%{opacity:0;transform:translateX(92px)}60%{opacity:1;transform:translateX(92px)}76%{opacity:1;transform:none}78%,100%{opacity:0;transform:none}}
+    @keyframes rA1{0%,2%{opacity:0;transform:translateY(-6px)}6%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
+    @keyframes rB1{0%,26%{opacity:0;transform:translateY(-6px)}30%,44%{opacity:1;transform:none}48%,100%{opacity:0}}
+    @keyframes rB2{0%,52%{opacity:0;transform:translateY(-6px)}56%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes rA2{0%,76%{opacity:0;transform:translateY(-6px)}80%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes pAB{0%,8%{opacity:0;transform:none}10%{opacity:1;transform:none}26%{opacity:1;transform:translateX(36px)}28%,100%{opacity:0;transform:translateX(36px)}}
+    @keyframes pBA{0%,58%{opacity:0;transform:translateX(36px)}60%{opacity:1;transform:translateX(36px)}76%{opacity:1;transform:none}78%,100%{opacity:0;transform:none}}
     .rA1{animation:rA1 12s ease-out infinite}.rB1{animation:rB1 12s ease-out infinite}
     .rB2{animation:rB2 12s ease-out infinite}.rA2{animation:rA2 12s ease-out infinite}
     .pAB{animation:pAB 12s cubic-bezier(.5,0,.5,1) infinite}.pBA{animation:pBA 12s cubic-bezier(.5,0,.5,1) infinite}
@@ -266,83 +266,47 @@ ff_style = """
 
 def phone(x, header, header_cls, cls_new):
     rows = "".join(
-        f'<circle cx="{x + 22}" cy="{140 + i * 26}" r="6" fill="{SURFACE}"/>'
-        f'<rect x="{x + 34}" y="{137 + i * 26}" width="{[46, 38, 52, 32][i]}" height="6" rx="3" fill="{RULE}"/>'
-        f'<text x="{x + 88}" y="{143 + i * 26}" class="m mut" font-size="9">₹</text>'
-        f'<rect x="{x + 96}" y="{137 + i * 26}" width="16" height="6" rx="3" fill="{RULE}"/>'
+        f'<circle cx="{x + 14}" cy="{143 + i * 22}" r="4" fill="{SURFACE}"/>'
+        f'<rect x="{x + 22}" y="{140 + i * 22}" width="{[30, 24, 34, 20][i]}" height="5" rx="2.5" fill="{RULE}"/>'
+        f'<text x="{x + 57}" y="{146 + i * 22}" class="m mut" font-size="7.5">₹</text>'
+        f'<rect x="{x + 64}" y="{140 + i * 22}" width="10" height="5" rx="2.5" fill="{RULE}"/>'
         for i in range(4)
     )
     new = "".join(
-        f'<g class="{c} hide"><rect x="{x + 10}" y="104" width="108" height="22" rx="8" fill="{ACCENT}" opacity=".14"/>'
-        f'<circle cx="{x + 22}" cy="115" r="6" fill="{ACCENT}"/><rect x="{x + 34}" y="112" width="40" height="6" rx="3" fill="{ACCENT}"/>'
-        f'<text x="{x + 88}" y="118" class="m acc" font-size="9" font-weight="700">₹</text><rect x="{x + 96}" y="112" width="16" height="6" rx="3" fill="{ACCENT}"/></g>'
+        f'<g class="{c} hide"><rect x="{x + 6}" y="110" width="72" height="18" rx="6" fill="{ACCENT}" opacity=".14"/>'
+        f'<circle cx="{x + 14}" cy="119" r="4" fill="{ACCENT}"/><rect x="{x + 22}" y="116.5" width="26" height="5" rx="2.5" fill="{ACCENT}"/>'
+        f'<text x="{x + 57}" y="122" class="m acc" font-size="7.5" font-weight="700">₹</text><rect x="{x + 64}" y="116.5" width="10" height="5" rx="2.5" fill="{ACCENT}"/></g>'
         for c in cls_new
     )
-    return f"""    <rect x="{x}" y="50" width="128" height="250" rx="22" fill="#FFFFFF" stroke="{INK}" stroke-width="3"/>
-    <rect x="{x + 44}" y="59" width="40" height="5" rx="2.5" fill="{INK}"/>
-    <text x="{x + 64}" y="90" text-anchor="middle" class="{header_cls} ink" font-size="11.5" font-weight="700">{header}</text>
+    return f"""    <rect x="{x}" y="66" width="84" height="206" rx="16" fill="#FFFFFF" stroke="{INK}" stroke-width="3"/>
+    <rect x="{x + 30}" y="74" width="24" height="4" rx="2" fill="{INK}"/>
+    <text x="{x + 42}" y="100" text-anchor="middle" class="{header_cls} ink" font-size="9" font-weight="700">{header}</text>
     {new}
     {rows}
-    <rect x="{x + 10}" y="242" width="108" height="44" rx="10" fill="{INK}"/>
-    <text x="{x + 22}" y="260" class="m" fill="{PAPER}" opacity=".7" font-size="8.5" letter-spacing="1">BALANCE</text>
-    <rect x="{x + 22}" y="268" width="58" height="7" rx="3" fill="{PAPER}"/>"""
+    <rect x="{x + 6}" y="230" width="72" height="32" rx="8" fill="{INK}"/>
+    <text x="{x + 14}" y="243" class="m" fill="{PAPER}" opacity=".7" font-size="7" letter-spacing=".8">BALANCE</text>
+    <rect x="{x + 14}" y="249" width="40" height="5" rx="2.5" fill="{PAPER}"/>"""
 
 
-ff_vignette = f"""{phone(790, "வரவு · செலவு", "ta", ["rA1", "rA2"])}
-{phone(1010, "Income · Expense", "d", ["rB1", "rB2"])}
-    <path d="M926 175 H1002" stroke="{RULE}" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"/>
-    <g class="pAB hide"><rect x="912" y="167" width="24" height="16" rx="5" fill="{ACCENT}"/><text x="924" y="179" text-anchor="middle" class="m" fill="#FFFFFF" font-size="10" font-weight="700">₹</text></g>
-    <g class="pBA hide"><rect x="912" y="167" width="24" height="16" rx="5" fill="{ACCENT}"/><text x="924" y="179" text-anchor="middle" class="m" fill="#FFFFFF" font-size="10" font-weight="700">₹</text></g>
-    <text x="854" y="326" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">PHONE A · TAMIL</text>
-    <text x="1074" y="326" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">PHONE B · ENGLISH</text>"""
-
-def wide(name, title, tag, marker, quote_lines, desc_lines, stack, numbers, vignette, style, desc_alt):
-    stats = "".join(
-        f'<text x="{44 + i * 150}" y="326" class="d ink" font-size="38" font-weight="700" letter-spacing="-1">{n}</text>'
-        f'<text x="{46 + i * 150}" y="350" class="m mut" font-size="11" letter-spacing="1.2">{lab}</text>'
-        for i, (n, lab) in enumerate(numbers)
-    )
-    quote = "".join(
-        f'<text x="42" y="{160 + i * 28}" class="d ink" font-size="21">{line}</text>' for i, line in enumerate(quote_lines)
-    )
-    desc = "".join(
-        f'<text x="42" y="{220 + i * 22}" class="d mut" font-size="15.5">{line}</text>' for i, line in enumerate(desc_lines)
-    )
-    body = f"""  <g class="e e1">
-    <circle cx="51" cy="49" r="10" fill="{PAPER}" stroke="{marker[0]}" stroke-width="{marker[1]}"/>
-    <text x="72" y="53.5" class="m mut" font-size="12" letter-spacing="1.3">{tag}</text>
-  </g>
-  <text x="40" y="118" class="d ink e e2" font-size="48" font-weight="700" letter-spacing="-1.4">{title}</text>
-  <g class="e e3">{quote}</g>
-  <g class="e e4">
-    {desc}
-    <text x="42" y="270" class="m mut" font-size="12" letter-spacing=".4">{stack}</text>
-  </g>
-  <g class="e e5">{stats}</g>
-  <g class="e e5">
-    <text x="560" y="350" class="d ink" font-size="15" font-weight="600">View repository</text>
-    <g class="arrow"><text x="680" y="350" class="d acc" font-size="16" font-weight="700">→</text></g>
-  </g>
-  <g class="v">
-{vignette}
-  </g>"""
-    (OUT / f"{name}.svg").write_text(svg(1200, 380, title, desc_alt, style, body), encoding="utf-8")
-
-
-wide(
-    "family-finance", "Family Finance", "STATION 07 · HOME", (INK, 4.5),
-    ["Two people, two phones, one shared set of books,", "kept to the paisa."],
-    ["Offline-first Android money manager in Tamil and English. Either phone",
-     "can add or edit, and both stay in sync after a day offline in the fields."],
-    "KOTLIN · JETPACK COMPOSE · MATERIAL 3 · FIREBASE AUTH + FIRESTORE",
-    [("195", "UNIT TESTS"), ("29", "RULES TESTS"), ("22", "DEVICE TESTS")],
+ff_vignette = f"""{phone(372, "வரவு · செலவு", "ta", ["rA1", "rA2"])}
+{phone(484, "Income · Expense", "d", ["rB1", "rB2"])}
+    <path d="M458 165 H482" stroke="{RULE}" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+    <g class="pAB hide"><rect x="446" y="158" width="18" height="14" rx="4" fill="{ACCENT}"/><text x="455" y="168.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="8.5" font-weight="700">₹</text></g>
+    <g class="pBA hide"><rect x="446" y="158" width="18" height="14" rx="4" fill="{ACCENT}"/><text x="455" y="168.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="8.5" font-weight="700">₹</text></g>
+    <text x="414" y="294" text-anchor="middle" class="m mut" font-size="9.5" letter-spacing="1">TAMIL</text>
+    <text x="526" y="294" text-anchor="middle" class="m mut" font-size="9.5" letter-spacing="1">ENGLISH</text>
+    <text x="470" y="334" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">TWO PHONES · ONE SET OF BOOKS</text>"""
+half(
+    "family-finance", "STATION 07 · HOME", "Family Finance",
+    ["Two phones, one shared set of books,", "kept to the paisa. Offline-first,", "in Tamil and English."],
+    ["KOTLIN · COMPOSE · FIREBASE", "195 UNIT · 29 RULES · 22 DEVICE TESTS"],
     ff_vignette, ff_style,
     "Private, offline-first family money manager for Android in Tamil and English, with 195 unit tests, 29 rules tests and 22 device tests.",
 )
 
-# ---------------------------------------------------------------- 08 git history (wide)
+# ---------------------------------------------------------------- 08 git history
 dig_style = """
-    @keyframes slip{0%,8%{transform:none}14%,90%{transform:translateY(16px)}98%,100%{transform:none}}
+    @keyframes slip{0%,8%{transform:none}14%,90%{transform:translateY(12px)}98%,100%{transform:none}}
     @keyframes was{0%,10%{opacity:1}13%,90%{opacity:0}97%,100%{opacity:1}}
     @keyframes now{0%,10%{opacity:0}13%,90%{opacity:1}97%,100%{opacity:0}}
     @keyframes bore1{0%,16%{transform:scaleY(0);opacity:1}30%,90%{transform:none;opacity:1}96%,100%{transform:none;opacity:0}}
@@ -361,57 +325,101 @@ dig_style = """
 
 def rock(bar_x, widths):
     bands = "".join(
-        f'<rect x="770" y="{y}" width="380" height="{h}" fill="{fill}"/>'
-        for y, h, fill in [(30, 90, "#EAE5DA"), (120, 70, "#DFD8C9"), (190, 100, "#D2CBBB")]
+        f'<rect x="372" y="{y}" width="196" height="{h}" fill="{fill}"/>'
+        for y, h, fill in [(40, 90, "#EAE5DA"), (130, 50, "#DFD8C9"), (180, 90, "#D2CBBB")]
     )
     bars = "".join(
-        f'<rect x="{bar_x}" y="{y}" width="{w}" height="7" rx="3.5" fill="#BDB5A1"/>'
-        for y, w in zip([94, 212, 234], widths)
+        f'<rect x="{bar_x}" y="{y}" width="{w}" height="6" rx="3" fill="#BDB5A1"/>'
+        for y, w in zip([100, 204, 222], widths)
     )
     return bands + bars
 
 
-weak_shaft = "".join(f'<rect x="1036" y="{y}" width="8" height="14" fill="{INK}"/>' for y in [190, 212, 234, 256])
+weak_shaft = "".join(f'<rect x="485" y="{y}" width="7" height="12" fill="{INK}"/>' for y in [194, 214, 234, 254])
 dig_vignette = f"""    <defs>
-      <clipPath id="panel"><rect x="770" y="50" width="380" height="268" rx="16"/></clipPath>
-      <clipPath id="beforeSide"><path d="M770 50 H950 L905 262 H770 Z"/></clipPath>
-      <clipPath id="afterSide"><path d="M950 50 H1150 V262 H905 Z"/></clipPath>
-      <pattern id="undug" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="{SURFACE}"/><rect width="3" height="10" fill="{RULE}"/></pattern>
+      <clipPath id="panel"><rect x="372" y="62" width="196" height="240" rx="14"/></clipPath>
+      <clipPath id="beforeSide"><path d="M372 62 H480 L450 250 H372 Z"/></clipPath>
+      <clipPath id="afterSide"><path d="M480 62 H568 V250 H450 Z"/></clipPath>
+      <pattern id="undug" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="{SURFACE}"/><rect width="3" height="9" fill="{RULE}"/></pattern>
     </defs>
     <g clip-path="url(#panel)">
       <g clip-path="url(#beforeSide)">
-        {rock(784, [92, 72, 108])}
-        <text x="782" y="160" class="m ink" font-size="11" font-weight="600">return price * 0.10</text>
+        {rock(384, [60, 46, 54])}
+        <text x="384" y="160" class="m ink" font-size="11.5" font-weight="700">× 0.10</text>
       </g>
       <g clip-path="url(#afterSide)"><g class="slip">
-        {rock(965, [128, 84, 116])}
-        <text x="945" y="160" class="m ink was alt" font-size="11" font-weight="600">return price * 0.10</text>
-        <text x="945" y="160" class="m ink now" font-size="11" font-weight="600">return price * 0.15</text>
+        {rock(490, [62, 40, 56])}
+        <text x="490" y="160" class="m ink was alt" font-size="11.5" font-weight="700">× 0.10</text>
+        <text x="490" y="160" class="m ink now" font-size="11.5" font-weight="700">× 0.15</text>
       </g></g>
-      <rect x="770" y="262" width="380" height="56" fill="url(#undug)"/>
+      <rect x="372" y="250" width="196" height="52" fill="url(#undug)"/>
     </g>
-    <path d="M950 50 L905 262" fill="none" stroke="{INK}" stroke-width="4" stroke-linecap="round"/>
-    <text x="784" y="76" class="m ink" font-size="10" font-weight="700" letter-spacing="1.2">BASE</text>
-    <text x="1136" y="76" text-anchor="end" class="m ink" font-size="10" font-weight="700" letter-spacing="1.2">HEAD</text>
-    <g class="bore b1"><rect x="956" y="190" width="8" height="88" fill="{ACCENT}"/></g>
+    <path d="M480 62 L450 250" fill="none" stroke="{INK}" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="384" y="84" class="m ink" font-size="9.5" font-weight="700" letter-spacing="1">BASE</text>
+    <text x="556" y="84" text-anchor="end" class="m ink" font-size="9.5" font-weight="700" letter-spacing="1">HEAD</text>
+    <g class="bore b1"><rect x="426" y="194" width="7" height="74" fill="{ACCENT}"/></g>
     <g class="bore b2">{weak_shaft}</g>
-    <g class="bore b3"><rect x="1111" y="190" width="8" height="88" fill="{PAPER}" stroke="{INK}" stroke-width="2"/></g>
-    <rect x="784" y="278" width="116" height="22" rx="11" fill="{PAPER}"/>
-    <text x="842" y="293" text-anchor="middle" class="m mut" font-size="9.5" font-weight="700" letter-spacing=".6">UNDUG GROUND</text>
-    <g class="t1"><rect x="930" y="278" width="60" height="22" rx="11" fill="{ACCENT}"/><text x="960" y="293" text-anchor="middle" class="m" fill="#FFFFFF" font-size="9.5" font-weight="700" letter-spacing=".6">STRONG</text></g>
-    <g class="t2"><rect x="1010" y="278" width="60" height="22" rx="11" fill="{PAPER}" stroke="{INK}" stroke-width="2"/><text x="1040" y="293" text-anchor="middle" class="m ink" font-size="9.5" font-weight="700" letter-spacing=".6">WEAK</text></g>
-    <g class="t3"><rect x="1085" y="278" width="60" height="22" rx="11" fill="{PAPER}" stroke="{MUTED}" stroke-width="2" stroke-dasharray="4 4"/><text x="1115" y="293" text-anchor="middle" class="m mut" font-size="9.5" font-weight="700" letter-spacing=".6">NONE</text></g>
-    <rect x="770" y="50" width="380" height="268" rx="16" fill="none" stroke="{INK}" stroke-width="3"/>
-    <text x="960" y="346" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">FAULT = CHANGE · SHAFT = POSSIBLE TEST LINK</text>"""
-
-wide(
-    "change-archaeologist", "Change Archaeologist", "STATION 08 · GIT HISTORY · TERMINUS", (ACCENT, 5),
-    ["See how a function changed between two Git versions,", "and whether its tests moved with it."],
-    ["Reads both versions as syntax trees, then separates what it saw from what",
-     "that suggests and what it can't know. No AI, and it never runs your code."],
-    "TYPESCRIPT · TS-MORPH · REACT + VITE · MONACO · NODE CLI",
-    [("6", "CHANGE PATTERNS"), ("4", "LINK STATUSES"), ("0", "AI CALLS")],
+    <g class="bore b3"><rect x="539" y="194" width="7" height="74" fill="{PAPER}" stroke="{INK}" stroke-width="2"/></g>
+    <g class="t1"><rect x="405" y="268" width="50" height="20" rx="10" fill="{ACCENT}"/><text x="430" y="281.5" text-anchor="middle" class="m" fill="#FFFFFF" font-size="8.5" font-weight="700" letter-spacing=".4">STRONG</text></g>
+    <g class="t2"><rect x="463" y="268" width="50" height="20" rx="10" fill="{PAPER}" stroke="{INK}" stroke-width="2"/><text x="488" y="281.5" text-anchor="middle" class="m ink" font-size="8.5" font-weight="700" letter-spacing=".4">WEAK</text></g>
+    <g class="t3"><rect x="517" y="268" width="48" height="20" rx="10" fill="{PAPER}" stroke="{MUTED}" stroke-width="2" stroke-dasharray="4 4"/><text x="541" y="281.5" text-anchor="middle" class="m mut" font-size="8.5" font-weight="700" letter-spacing=".4">NONE</text></g>
+    <rect x="372" y="62" width="196" height="240" rx="14" fill="none" stroke="{INK}" stroke-width="3"/>
+    <text x="470" y="334" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">CHANGE → TEST LINKS</text>"""
+half(
+    "change-archaeologist", "STATION 08 · GIT HISTORY", "Change Archaeologist",
+    ["See how a function changed between", "two Git versions, and whether its", "tests moved with it. No AI."],
+    ["TYPESCRIPT · TS-MORPH · REACT + VITE", "6 PATTERNS TESTED · RUNS LOCALLY"],
     dig_vignette, dig_style,
     "Local-first static analysis that compares a function across two Git revisions and looks for matching changes in its tests, separating evidence from inference.",
+)
+
+# ---------------------------------------------------------------- 09 library
+cite_style = """
+    @keyframes s1{0%,2%{opacity:0;transform:translateX(-8px)}8%,92%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes s2{0%,14%{opacity:0;transform:translateX(-8px)}20%,92%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes s3{0%,26%{opacity:0;transform:translateX(-8px)}32%,92%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes pick{0%,38%{opacity:0;transform:scale(.6)}43%,92%{opacity:1;transform:none}98%,100%{opacity:0}}
+    @keyframes link{0%,42%{stroke-dashoffset:44}52%,92%{stroke-dashoffset:0;opacity:1}98%,100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes mark{0%,50%{transform:scaleX(0);opacity:1}62%,92%{transform:none;opacity:1}98%,100%{transform:none;opacity:0}}
+    .s1{animation:s1 9s ease-out infinite}.s2{animation:s2 9s ease-out infinite}.s3{animation:s3 9s ease-out infinite}
+    .pick{transform-box:fill-box;transform-origin:center;animation:pick 9s cubic-bezier(.3,1.6,.5,1) infinite}
+    .link{stroke-dasharray:44;animation:link 9s ease-in-out infinite}
+    .mark{transform-box:fill-box;transform-origin:left;animation:mark 9s cubic-bezier(.6,0,.2,1) infinite}
+"""
+
+
+def sentence(k, w1, w2):
+    y = 104 + k * 52
+    return (
+        f'<g class="s{k + 1}"><rect x="382" y="{y}" width="{w1}" height="6" rx="3" fill="{INK}" opacity=".75"/>'
+        f'<rect x="382" y="{y + 13}" width="{w2}" height="6" rx="3" fill="{INK}" opacity=".75"/>'
+        f'<rect x="{386 + w2}" y="{y + 8}" width="18" height="15" rx="4" fill="{PAPER}" stroke="{INK}" stroke-width="1.5"/>'
+        f'<text x="{395 + w2}" y="{y + 19}" text-anchor="middle" class="m ink" font-size="8.5" font-weight="700">{k + 1}</text></g>'
+    )
+
+
+page_lines = "".join(
+    f'<rect x="488" y="{y}" width="{w}" height="5" rx="2.5" fill="{RULE}"/>'
+    for y, w in [(108, 64), (120, 58), (132, 66), (144, 44), (206, 62), (218, 66), (230, 50), (242, 60), (254, 40)]
+)
+cite_vignette = f"""    <rect x="372" y="84" width="96" height="176" rx="12" fill="{SURFACE}"/>
+    {sentence(0, 70, 34)}
+    {sentence(1, 64, 42)}
+    {sentence(2, 72, 28)}
+    <rect x="476" y="66" width="92" height="214" rx="6" fill="#FFFFFF" stroke="{INK}" stroke-width="3"/>
+    <rect x="488" y="84" width="52" height="7" rx="3.5" fill="{INK}"/>
+    {page_lines}
+    <rect x="484" y="160" width="76" height="34" rx="4" fill="{ACCENT}" fill-opacity=".16" class="mark"/>
+    <rect x="488" y="168" width="66" height="5" rx="2.5" fill="{INK}"/>
+    <rect x="488" y="180" width="48" height="5" rx="2.5" fill="{INK}"/>
+    <g class="pick"><rect x="428" y="164" width="18" height="15" rx="4" fill="{ACCENT}"/><text x="437" y="175" text-anchor="middle" class="m" fill="#FFFFFF" font-size="8.5" font-weight="700">2</text></g>
+    <path d="M446 171.5 C462 171.5 466 177 484 177" fill="none" stroke="{ACCENT}" stroke-width="2.5" stroke-linecap="round" class="link"/>
+    <text x="470" y="334" text-anchor="middle" class="m mut" font-size="10.5" letter-spacing="1.2">EVERY SENTENCE → ITS SOURCE</text>"""
+half(
+    "paperpilot", "STATION 09 · LIBRARY", "PaperPilot",
+    ["Ask a research paper a question.", "Every sentence of the answer links", "to the exact passage it quotes."],
+    ["FASTAPI · REACT · POSTGRES + PGVECTOR", "GROBID · 1,191 BACKEND TESTS"],
+    cite_vignette, cite_style,
+    "Question answering over research papers in which every answer sentence cites a quoted source passage, verified in code. FastAPI, React, PostgreSQL with pgvector and GROBID.",
 )
 print("cards written to", OUT)

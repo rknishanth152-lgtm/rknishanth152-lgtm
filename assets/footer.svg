@@ -1,9 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" role="img" aria-labelledby="t d">
   <title id="t">Next station</title>
-  <desc id="d">The line continues past Change Archaeologist towards the next project. Thanks for riding.</desc>
+  <desc id="d">The line continues past PaperPilot towards the next project. Thanks for riding.</desc>
   <style>
     .d{font-family:'Segoe UI Variable Display','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
     .m{font-family:ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,Menlo,monospace}
+    .ink{fill:#14161A}.mut{fill:#5F6168}
     @keyframes run{0%{transform:translateX(0);opacity:0}6%{opacity:1}88%{opacity:1}100%{transform:translateX(1000px);opacity:0}}
     @keyframes breathe{0%,100%{opacity:1}50%{opacity:.35}}
     .train{animation:run 7s cubic-bezier(.45,0,.35,1) infinite}
@@ -16,7 +17,7 @@
   <circle cx="80" cy="70" r="15" fill="#F4F1EA" stroke="#2F55E4" stroke-width="6"/>
   <circle cx="1120" cy="70" r="11" fill="#F4F1EA" stroke="#14161A" stroke-width="4.5" class="next"/>
   <g class="train"><rect x="94" y="62" width="40" height="16" rx="8" fill="#2F55E4"/><rect x="120" y="66.5" width="8" height="7" rx="2" fill="#F4F1EA"/></g>
-  <text x="80" y="124" class="m" fill="#5F6168" font-size="12" letter-spacing="1.3">08 · GIT HISTORY</text>
-  <text x="1120" y="124" text-anchor="end" class="m" fill="#5F6168" font-size="12" letter-spacing="1.3">NEXT STATION · BEING BUILT</text>
-  <text x="600" y="130" text-anchor="middle" class="d" fill="#14161A" font-size="20" font-weight="600">Thanks for riding the line.</text>
+  <text x="80" y="124" class="m mut" font-size="12" letter-spacing="1.3">09 · LIBRARY</text>
+  <text x="1120" y="124" text-anchor="end" class="m mut" font-size="12" letter-spacing="1.3">NEXT STATION · BEING BUILT</text>
+  <text x="600" y="130" text-anchor="middle" class="d ink" font-size="20" font-weight="600">Thanks for riding the line.</text>
 </svg>
