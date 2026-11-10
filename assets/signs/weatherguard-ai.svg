@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="128" viewBox="0 0 300 128" role="img" aria-labelledby="t">
+  <title id="t">Station 04, Sky: WeatherGuard AI</title>
+  <style>
+    .d{font-family:'Segoe UI Variable Display','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
+    .m{font-family:ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,Menlo,monospace}
+    .ink{fill:#14161A}.mut{fill:#5F6168}
+    @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    @keyframes nudge{0%,100%{transform:none}50%{transform:translateX(5px)}}
+    @keyframes ping{0%{opacity:.9;transform:scale(1)}30%,100%{opacity:0;transform:scale(2.4)}}
+    .h{animation:up .6s ease-out 0.24s both}
+    .arrow{animation:nudge 1.8s ease-in-out infinite}
+    .ping{transform-box:fill-box;transform-origin:center;opacity:0;animation:ping 4s ease-out 3.1s infinite}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}.ping{opacity:0}}
+  </style>
+  <rect width="300" height="128" rx="20" fill="#F4F1EA"/>
+  <g class="h">
+    <circle cx="32" cy="38" r="9" fill="none" stroke="#2F55E4" stroke-width="3" class="ping"/>
+    <circle cx="32" cy="38" r="9" fill="#F4F1EA" stroke="#14161A" stroke-width="4.5"/>
+    <text x="52" y="44" class="m mut" font-size="16" letter-spacing="1.4">04 · SKY</text>
+    <text x="22" y="96" class="d ink" font-size="26.7" font-weight="700" letter-spacing="-.6">WeatherGuard AI</text>
+    <g class="arrow"><text x="278" y="96" text-anchor="end" class="d" fill="#2F55E4" font-size="24" font-weight="700">→</text></g>
+  </g>
+</svg>

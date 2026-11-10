@@ -2,11 +2,11 @@
 
 Adding a project: draw its card in scripts/cards.py, add one entry to STATIONS
 below, run this script. It regenerates the cards, the route map, the footer,
-the "earlier stations" toggle, and the stations block in README.md. The four
-newest stations are shown as cards; the rest fold into the toggle, so the
-README stays the same length however long the line gets. The toggle image
-is wrapped in <picture> because GitHub links every bare <img> to its file,
-and that link would swallow the click meant to open the section.
+the earlier-station signs, and the stations block in README.md. The four
+newest stations are shown as full cards; older ones become small linked
+signs, five to a row, so the README barely grows as the line gets longer.
+(A collapsible <details> section was tried and dropped: GitHub always draws
+its disclosure arrow, and READMEs cannot style it away.)
 """
 import math
 import re
@@ -204,32 +204,61 @@ def footer():
     (ASSETS / "footer.svg").write_text(svg, encoding="utf-8")
 
 
-# ---------------------------------------------------------------- earlier stations toggle
-def archive(older):
-    first, last = 1, len(older)
-    places = " → ".join(s["place"] for s in older)
+# ---------------------------------------------------------------- earlier stations
+SIGNS_PER_ROW = 5
+
+
+def earlier_label(count):
+    """Section heading in the same style as label-toolkit.svg."""
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" role="img" aria-labelledby="t">
-  <title id="t">Show {last} earlier stations</title>
+  <title id="t">Earlier stations</title>
   <style>{FONTS}
     @keyframes up{{from{{opacity:0;transform:translateY(12px)}}to{{opacity:1;transform:none}}}}
-    @keyframes bob{{0%,100%{{transform:none}}50%{{transform:translateY(4px)}}}}
+    @keyframes grow{{from{{transform:scaleX(0)}}to{{transform:none}}}}
     .h{{animation:up .7s ease-out both}}
-    .bob{{animation:bob 1.8s ease-in-out infinite}}
+    .bar{{transform-box:fill-box;transform-origin:left;animation:grow 1s cubic-bezier(.6,0,.2,1) .2s both}}
     @media (prefers-reduced-motion:reduce){{*{{animation:none!important}}}}
   </style>
   <rect width="1200" height="120" rx="28" fill="{PAPER}"/>
   <g class="h">
-    <text x="60" y="60" class="d ink" font-size="30" font-weight="700" letter-spacing="-.8">Earlier stations</text>
-    <text x="60" y="88" class="m mut" font-size="12" letter-spacing="1.2">{first:02d}–{last:02d} · {places}</text>
+    <text x="60" y="62" class="d ink" font-size="32" font-weight="700" letter-spacing="-.8">Earlier stations</text>
+    <text x="60" y="90" class="m mut" font-size="12.5" letter-spacing="1.2">01–{count:02d} · EACH SIGN OPENS ITS REPOSITORY</text>
   </g>
-  <g class="h" style="animation-delay:.15s">
-    <rect x="924" y="38" width="216" height="44" rx="22" fill="{INK}"/>
-    <text x="1010" y="65" text-anchor="middle" class="m" fill="{PAPER}" font-size="13" font-weight="700" letter-spacing="1.5">SHOW {WORDS[last].upper() if last < len(WORDS) else last} MORE</text>
-    <g class="bob"><path d="M1102 56 l8 8 l8 -8" fill="none" stroke="{PAPER}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <rect x="360" y="56" width="780" height="9" rx="4.5" fill="{INK}" class="bar"/>
+  <circle cx="1140" cy="60.5" r="11" fill="{PAPER}" stroke="{MUTED}" stroke-width="4.5"/>
+</svg>
+"""
+    (ASSETS / "label-earlier.svg").write_text(svg, encoding="utf-8")
+
+
+def sign(i, s):
+    """A small station sign: number, place, name and an arrow. Shown at about 160px wide."""
+    title = s["title"]
+    size = min(30, round(224 / (0.56 * len(title)), 1))
+    delay = .08 * (i % SIGNS_PER_ROW)
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="300" height="128" viewBox="0 0 300 128" role="img" aria-labelledby="t">
+  <title id="t">Station {i + 1:02d}, {s["place"].title()}: {title}</title>
+  <style>{FONTS}
+    @keyframes up{{from{{opacity:0;transform:translateY(10px)}}to{{opacity:1;transform:none}}}}
+    @keyframes nudge{{0%,100%{{transform:none}}50%{{transform:translateX(5px)}}}}
+    @keyframes ping{{0%{{opacity:.9;transform:scale(1)}}30%,100%{{opacity:0;transform:scale(2.4)}}}}
+    .h{{animation:up .6s ease-out {delay:.2f}s both}}
+    .arrow{{animation:nudge 1.8s ease-in-out infinite}}
+    .ping{{transform-box:fill-box;transform-origin:center;opacity:0;animation:ping 4s ease-out {1 + .7 * i:.1f}s infinite}}
+    @media (prefers-reduced-motion:reduce){{*{{animation:none!important}}.ping{{opacity:0}}}}
+  </style>
+  <rect width="300" height="128" rx="20" fill="{PAPER}"/>
+  <g class="h">
+    <circle cx="32" cy="38" r="9" fill="none" stroke="{ACCENT}" stroke-width="3" class="ping"/>
+    <circle cx="32" cy="38" r="9" fill="{PAPER}" stroke="{INK}" stroke-width="4.5"/>
+    <text x="52" y="44" class="m mut" font-size="16" letter-spacing="1.4">{i + 1:02d} · {s["place"]}</text>
+    <text x="22" y="96" class="d ink" font-size="{size:g}" font-weight="700" letter-spacing="-.6">{title}</text>
+    <g class="arrow"><text x="278" y="96" text-anchor="end" class="d" fill="{ACCENT}" font-size="24" font-weight="700">→</text></g>
   </g>
 </svg>
 """
-    (ASSETS / "archive.svg").write_text(svg, encoding="utf-8")
+    (ASSETS / "signs").mkdir(exist_ok=True)
+    (ASSETS / "signs" / f"{s['card']}.svg").write_text(svg, encoding="utf-8")
 
 
 # ---------------------------------------------------------------- README block
@@ -242,18 +271,25 @@ def pairs(items):
     return "\n\n".join("\n".join(card_link(i, s) for i, s in items[k:k + 2]) for k in range(0, len(items), 2))
 
 
+def sign_link(i, s):
+    return (f'<a href="https://github.com/{USER}/{s["repo"]}"><img src="assets/signs/{s["card"]}.svg" width="19%" '
+            f'alt="Station {i + 1:02d}, {s["place"].title()}: {s["title"]}"/></a>')
+
+
 def readme(featured, older):
     block = pairs(featured)
     if older:
+        rows = "\n\n".join("\n".join(sign_link(i, s) for i, s in older[k:k + SIGNS_PER_ROW])
+                           for k in range(0, len(older), SIGNS_PER_ROW))
         block += f"""
 
-<details>
-<summary><picture><img src="assets/archive.svg" width="96%" alt="Show {len(older)} earlier stations"/></picture></summary>
 <br/>
 
-{pairs(older)}
+<img src="assets/label-earlier.svg" width="100%" alt="Earlier stations"/>
 
-</details>"""
+<br/><br/>
+
+{rows}"""
     p = ROOT / "README.md"
     text = p.read_text(encoding="utf-8")
     new, count = re.subn(r"(<!-- stations:start -->\r?\n).*?(<!-- stations:end -->)",
@@ -269,6 +305,9 @@ if __name__ == "__main__":
     older = numbered[: max(len(STATIONS) - FEATURED, 0)]
     route()
     footer()
-    archive([s for _, s in older])
+    if older:
+        earlier_label(len(older))
+    for i, s in older:
+        sign(i, s)
     readme(featured, older)
     print(f"built {len(STATIONS)} stations: {len(featured)} featured, {len(older)} earlier")

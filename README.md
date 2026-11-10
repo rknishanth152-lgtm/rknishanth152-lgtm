@@ -17,19 +17,17 @@
 <a href="https://github.com/rknishanth152-lgtm/family-finance-manager"><img src="assets/cards/family-finance.svg" width="49%" alt="Station 07, Home: Family Finance. Offline-first Android money manager in Tamil and English, kept to the paisa."/></a>
 <a href="https://github.com/rknishanth152-lgtm/JanKavach"><img src="assets/cards/jankavach.svg" width="49%" alt="Station 06, Phone: JanKavach. A Telegram bot that flags scam texts and voice notes."/></a>
 
-<details>
-<summary><picture><img src="assets/archive.svg" width="96%" alt="Show 5 earlier stations"/></picture></summary>
 <br/>
 
-<a href="https://github.com/rknishanth152-lgtm/smart-billing-system"><img src="assets/cards/smart-billing.svg" width="49%" alt="Station 01, Shop: Smart Billing. Java Swing billing and inventory for Shree Annapurna Edible Oil Company."/></a>
-<a href="https://github.com/rknishanth152-lgtm/SpaceXR"><img src="assets/cards/spacexr.svg" width="49%" alt="Station 02, Classroom: SpaceXR. An interactive Solar System in the browser with WebXR."/></a>
+<img src="assets/label-earlier.svg" width="100%" alt="Earlier stations"/>
 
-<a href="https://github.com/rknishanth152-lgtm/farmsense-ai"><img src="assets/cards/farmsense-ai.svg" width="49%" alt="Station 03, Field: FarmSense AI. Crop disease diagnosis from a photo, plus irrigation and yield planning."/></a>
-<a href="https://github.com/rknishanth152-lgtm/WeatherGuard-AI"><img src="assets/cards/weatherguard-ai.svg" width="49%" alt="Station 04, Sky: WeatherGuard AI. Random Forest rain prediction with a four-tier advisory."/></a>
+<br/><br/>
 
-<a href="https://github.com/rknishanth152-lgtm/PhishSentinel"><img src="assets/cards/phishsentinel.svg" width="49%" alt="Station 05, Browser: PhishSentinel. XGBoost phishing URL detection with a Chrome extension."/></a>
-
-</details>
+<a href="https://github.com/rknishanth152-lgtm/smart-billing-system"><img src="assets/signs/smart-billing.svg" width="19%" alt="Station 01, Shop: Smart Billing"/></a>
+<a href="https://github.com/rknishanth152-lgtm/SpaceXR"><img src="assets/signs/spacexr.svg" width="19%" alt="Station 02, Classroom: SpaceXR"/></a>
+<a href="https://github.com/rknishanth152-lgtm/farmsense-ai"><img src="assets/signs/farmsense-ai.svg" width="19%" alt="Station 03, Field: FarmSense AI"/></a>
+<a href="https://github.com/rknishanth152-lgtm/WeatherGuard-AI"><img src="assets/signs/weatherguard-ai.svg" width="19%" alt="Station 04, Sky: WeatherGuard AI"/></a>
+<a href="https://github.com/rknishanth152-lgtm/PhishSentinel"><img src="assets/signs/phishsentinel.svg" width="19%" alt="Station 05, Browser: PhishSentinel"/></a>
 <!-- stations:end -->
 
 <sub>Try them live&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://farmsense-ai-eight.vercel.app">FarmSense AI</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://weatherguard-gold.vercel.app">WeatherGuard AI</a></sub>
